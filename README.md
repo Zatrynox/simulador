@@ -1,11 +1,11 @@
-# Proyecto The Wine Square v2620
+# Proyecto South American Geographic Observatory (SAGO) v202610
 
 ## Creación del proyecto
 
 > [!CAUTION]
 > **En el caso de estar en un equipo MAC:**
 > - Debe anteceder el comando `sudo` al ejecutar las instrucciones: `ng` y `chown`, y luego ingresar la contraseña del Administrador (`d3v3l0p3rUPC`).
-> - Debe ubicarse en la carpeta `/Users/alumnos/IdeaProjects/1asi0729/202620` o en otra de su preferencia.
+> - Debe ubicarse en la carpeta `/Users/alumnos/IdeaProjects/1asi0729/202610` o en otra de su preferencia.
 
 > [!CAUTION]
 > **En el caso de estar en un equipo Windows:**
@@ -21,7 +21,7 @@ A continuación se detalla las instrucciones para crear un nuevo `workspace` e `
 ng new eanrcucode
 ```
 
-Reemplace `eanrcucode` por el nombre real del proyecto (por ejemplo `ea20262u201821873`).
+Reemplace `eanrcucode` por el nombre real del proyecto (por ejemplo `ea11990u201621873`).
 
 Después de ejecutar el CLI command, le mostrará diferentes opciones y debe escoger las siguientes:
 
@@ -147,41 +147,33 @@ ng serve --port 4200
 {
   "option": {
     "home": "Home",
-    "new-preservation-item": "New Preservation Item"
+    "new-country-item": "New Country Item"
   },
   "home": {
     "title": "Home",
-    "content": "Engineered Products for Wine Cellars.",
-    "my-wine-cellars": "My Wine Cellars"
+    "content": "Engineered Products for South American Regional Studies.",
+    "my-geographic-observatories": "My Geographic Observatories"
   },
-  "cellar-summary": {
-    "total-bottles": "Total Bottles",
-    "available-capacity": "Available Capacity",
+  "observatory-summary": {
+    "total-registered-countries": "Total Registered Countries",
+    "accumulated-population": "Accumulated Population",
     "empty": "Empty"
   },
-  "new-preservation-item": {
-    "title": "New Preservation Item",
-    "subtitle": "Add Wine Bottles to Your Cellar",
-    "wine-type": "Wine Type",
-    "wine": "Wine",
-    "quantity": "Quantity",
+  "new-country-item": {
+    "title": "New Country Item",
+    "subtitle": "Add South American Countries to Your Observatory",
+    "country": "Country",
+    "official-name": "Official Name",
+    "flag-url": "Flag URL",
+    "area": "Area (km²)",
+    "population": "Population",
+    "start-of-week": "Start of Week",
     "create": "Create",
     "cancel": "Cancel",
-    "select-wine-type": "Select a wine type",
-    "select-wine": "Select a wine",
-    "quantity-required": "Quantity is required",
-    "quantity-min": "Quantity must be at least 1",
-    "quantity-exceeds": "Quantity exceeds available capacity ({{ available }})",
-    "wine-required": "Wine is required",
-    "wine-type-required": "Wine type is required"
-  },
-  "wine-type": {
-    "reds": "Reds",
-    "whites": "Whites",
-    "sparkling": "Sparkling",
-    "rose": "Rosé",
-    "dessert": "Dessert",
-    "port": "Port"
+    "search-country": "Search a country...",
+    "country-required": "Country is required",
+    "not-independent": "Country must be independent",
+    "area-too-small": "Country area must be greater than 100,000 km²"
   },
   "page-not-found": {
     "title": "Page not found",
@@ -202,41 +194,33 @@ ng serve --port 4200
 {
   "option": {
     "home": "Inicio",
-    "new-preservation-item": "Nuevo Artículo de Conservación"
+    "new-country-item": "Nuevo Artículo de País"
   },
   "home": {
     "title": "Inicio",
-    "content": "Productos de ingeniería para bodegas de vino.",
-    "my-wine-cellars": "Mis Bodegas de Vino"
+    "content": "Productos de ingeniería para estudios regionales sudamericanos.",
+    "my-geographic-observatories": "Mis Observatorios Geográficos"
   },
-  "cellar-summary": {
-    "total-bottles": "Total de Botellas",
-    "available-capacity": "Capacidad Disponible",
+  "observatory-summary": {
+    "total-registered-countries": "Total de Países Registrados",
+    "accumulated-population": "Población Acumulada",
     "empty": "Vacío"
   },
-  "new-preservation-item": {
-    "title": "Nuevo Artículo de Conservación",
-    "subtitle": "Añade botellas de vino a tu bodega",
-    "wine-type": "Tipo de Vino",
-    "wine": "Vino",
-    "quantity": "Cantidad",
+  "new-country-item": {
+    "title": "Nuevo Artículo de País",
+    "subtitle": "Añade países sudamericanos a tu observatorio",
+    "country": "País",
+    "official-name": "Nombre Oficial",
+    "flag-url": "URL de Bandera",
+    "area": "Área (km²)",
+    "population": "Población",
+    "start-of-week": "Inicio de Semana",
     "create": "Crear",
     "cancel": "Cancelar",
-    "select-wine-type": "Seleccionar un tipo de vino",
-    "select-wine": "Seleccionar un vino",
-    "quantity-required": "La cantidad es obligatoria",
-    "quantity-min": "La cantidad debe ser al menos 1",
-    "quantity-exceeds": "La cantidad excede la capacidad disponible ({{ available }})",
-    "wine-required": "El vino es obligatorio",
-    "wine-type-required": "El tipo de vino es obligatorio"
-  },
-  "wine-type": {
-    "reds": "Tintos",
-    "whites": "Blancos",
-    "sparkling": "Espumantes",
-    "rose": "Rosados",
-    "dessert": "Postre",
-    "port": "Oporto"
+    "search-country": "Buscar un país...",
+    "country-required": "El país es obligatorio",
+    "not-independent": "El país debe ser independiente",
+    "area-too-small": "El área del país debe ser mayor a 100,000 km²"
   },
   "page-not-found": {
     "title": "Página no encontrada",
@@ -266,95 +250,83 @@ ng serve --port 4200
 
 ```json
 {
-  "cellars": [
-    { "id": 1, "name": "Reds Cellar",      "wineType": "reds",      "capacity": 500 },
-    { "id": 2, "name": "Whites Cellar",    "wineType": "whites",    "capacity": 400 },
-    { "id": 3, "name": "Sparkling Cellar", "wineType": "sparkling", "capacity": 300 },
-    { "id": 4, "name": "Rosé Cellar",      "wineType": "rose",      "capacity": 250 },
-    { "id": 5, "name": "Dessert Cellar",   "wineType": "dessert",   "capacity": 200 },
-    { "id": 6, "name": "Port Cellar",      "wineType": "port",      "capacity": 180 }
+  "geographic-observatories": [
+    {
+      "id": "1",
+      "name": "Observatorio Geográfico Andino",
+      "regionCode": "AND"
+    },
+    {
+      "id": "2",
+      "name": "Observatorio de la Cuenca del Amazonas",
+      "regionCode": "AMA"
+    },
+    {
+      "id": "3",
+      "name": "Observatorio del Cono Sur",
+      "regionCode": "CSU"
+    }
   ],
-  "preservation-items": [
+  "country-items": [
     {
-      "id": 1,
-      "cellarId": 1,
-      "wineType": "reds",
-      "wineId": 1,
-      "wineName": "Eszencia 1999",
-      "quantity": 42,
-      "registeredAt": "2026-05-10T14:30:00.000Z"
+      "id": "1",
+      "observatoryId": "1",
+      "regionCode": "AND",
+      "countryName": "Peru",
+      "officialName": "Republic of Peru",
+      "flagUrl": "https://flagcdn.com/images/flags/pe.svg",
+      "area": 1285216.0,
+      "population": 32971846,
+      "startOfWeek": "monday",
+      "registeredAt": "2026-05-19T14:30:00.000Z"
     },
     {
-      "id": 2,
-      "cellarId": 1,
-      "wineType": "reds",
-      "wineId": 12,
-      "wineName": "Vega Sicilia Único",
-      "quantity": 18,
-      "registeredAt": "2026-05-12T09:15:00.000Z"
+      "id": "2",
+      "observatoryId": "1",
+      "regionCode": "AND",
+      "countryName": "Colombia",
+      "officialName": "Republic of Colombia",
+      "flagUrl": "https://flagcdn.com/images/flags/co.svg",
+      "area": 1141748.0,
+      "population": 50882884,
+      "startOfWeek": "monday",
+      "registeredAt": "2026-05-19T14:35:00.000Z"
     },
     {
-      "id": 3,
-      "cellarId": 2,
-      "wineType": "whites",
-      "wineId": 101,
-      "wineName": "Cloudy Bay Sauvignon Blanc",
-      "quantity": 35,
-      "registeredAt": "2026-05-13T16:45:00.000Z"
+      "id": "3",
+      "observatoryId": "2",
+      "regionCode": "AMA",
+      "countryName": "Brazil",
+      "officialName": "Federative Republic of Brazil",
+      "flagUrl": "https://flagcdn.com/images/flags/br.svg",
+      "area": 8515767.0,
+      "population": 212559409,
+      "startOfWeek": "monday",
+      "registeredAt": "2026-05-19T14:40:00.000Z"
     },
     {
-      "id": 4,
-      "cellarId": 3,
-      "wineType": "sparkling",
-      "wineId": 201,
-      "wineName": "Moët & Chandon Impérial",
-      "quantity": 24,
-      "registeredAt": "2026-05-15T11:20:00.000Z"
+      "id": "4",
+      "observatoryId": "3",
+      "regionCode": "CSU",
+      "countryName": "Argentina",
+      "officialName": "Argentine Republic",
+      "flagUrl": "https://flagcdn.com/images/flags/ar.svg",
+      "area": 2780400.0,
+      "population": 45376763,
+      "startOfWeek": "monday",
+      "registeredAt": "2026-05-19T14:45:00.000Z"
     },
     {
-      "id": 5,
-      "cellarId": 4,
-      "wineType": "rose",
-      "wineId": 301,
-      "wineName": "Domaine Ott Rosé",
-      "quantity": 15,
-      "registeredAt": "2026-05-16T08:00:00.000Z"
-    },
-    {
-      "id": 6,
-      "cellarId": 5,
-      "wineType": "dessert",
-      "wineId": 501,
-      "wineName": "Château d'Yquem 2015",
-      "quantity": 8,
-      "registeredAt": "2026-05-17T10:30:00.000Z"
-    },
-    {
-      "id": 7,
-      "cellarId": 2,
-      "wineType": "whites",
-      "wineId": 2,
-      "wineName": "Montrachet Grand Cru 2014",
-      "quantity": 15,
-      "registeredAt": "2026-05-19T03:47:38.346Z"
-    },
-    {
-      "id": 8,
-      "cellarId": 6,
-      "wineType": "port",
-      "wineId": 1,
-      "wineName": "Scion Port 1855",
-      "quantity": 20,
-      "registeredAt": "2026-05-19T03:47:51.649Z"
-    },
-    {
-      "id": 9,
-      "cellarId": 4,
-      "wineType": "rose",
-      "wineId": 13,
-      "wineName": "L'Hydropathe Elite Rosé 2018",
-      "quantity": 55,
-      "registeredAt": "2026-05-19T06:48:47.333Z"
+      "id": "5",
+      "observatoryId": "3",
+      "regionCode": "CSU",
+      "countryName": "Chile",
+      "officialName": "Republic of Chile",
+      "flagUrl": "https://flagcdn.com/images/flags/cl.svg",
+      "area": 756102.0,
+      "population": 19116209,
+      "startOfWeek": "monday",
+      "registeredAt": "2026-05-19T14:50:00.000Z"
     }
   ]
 }
@@ -371,8 +343,8 @@ json-server --watch db.json
 
 **Cargar** el navegador e **ingrese** las siguientes URLs:
 
-- http://localhost:3000/cellars
-- http://localhost:3000/preservation-items
+- http://localhost:3000/geographic-observatories
+- http://localhost:3000/country-items
 
 ### Configuración de environments
 
@@ -390,32 +362,24 @@ ng generate environments
 
 ```ts
 production: false,
-wineSquareProviderApiBaseUrl: 'http://localhost:3000',
-wineSquareProviderCellarsEndpointPath: '/cellars',
-wineSquareProviderPreservationItemsEndpointPath: '/preservation-items',
-sampleApiProviderApiBaseUrl: 'https://api.sampleapis.com/wines',
-sampleApiProviderRedsEndpointPath: '/reds',
-sampleApiProviderWhitesEndpointPath: '/whites',
-sampleApiProviderSparklingEndpointPath: '/sparkling',
-sampleApiProviderRoseEndpointPath: '/rose',
-sampleApiProviderDessertEndpointPath: '/dessert',
-sampleApiProviderPortEndpointPath: '/port',
+sagoProviderApiBaseUrl: 'http://localhost:3000',
+sagoProviderGeographicObservatoriesEndpointPath: '/geographic-observatories',
+sagoProviderCountryItemsEndpointPath: '/country-items',
+restCountriesApiBaseUrl: 'https://restcountries.com/v3.1',
+restCountriesSubregionEndpointPath: '/subregion/South%20America',
+restCountriesFields: 'fields=name,flags,region,subregion,area,population,independent,startOfWeek,flag',
 ```
 
 **Agregar** los siguientes valores a la constante `environment` del archivo `environment.ts` ubicado en la carpeta `environments`:
 
 ```ts
 production: true,
-wineSquareProviderApiBaseUrl: 'http://localhost:3000',
-wineSquareProviderCellarsEndpointPath: '/cellars',
-wineSquareProviderPreservationItemsEndpointPath: '/preservation-items',
-sampleApiProviderApiBaseUrl: 'https://api.sampleapis.com/wines',
-sampleApiProviderRedsEndpointPath: '/reds',
-sampleApiProviderWhitesEndpointPath: '/whites',
-sampleApiProviderSparklingEndpointPath: '/sparkling',
-sampleApiProviderRoseEndpointPath: '/rose',
-sampleApiProviderDessertEndpointPath: '/dessert',
-sampleApiProviderPortEndpointPath: '/port',
+sagoProviderApiBaseUrl: 'http://localhost:3000',
+sagoProviderGeographicObservatoriesEndpointPath: '/geographic-observatories',
+sagoProviderCountryItemsEndpointPath: '/country-items',
+restCountriesApiBaseUrl: 'https://restcountries.com/v3.1',
+restCountriesSubregionEndpointPath: '/subregion/South%20America',
+restCountriesFields: 'fields=name,flags,region,subregion,area,population,independent,startOfWeek,flag',
 ```
 
 ### Información del HttpClient y provideHttpClient
@@ -467,7 +431,7 @@ provideAppInitializer(() => {
 ```markdown
 - 📂 src
   - 📂 app
-    - 📂 preservation
+    - 📂 observatories
       - 📁 application
       - 📁 domain
         - 📁 model
@@ -475,7 +439,7 @@ provideAppInitializer(() => {
       - 📁 presentation
         - 📁 components
         - 📁 views
-    - 📂 winery
+    - 📂 geographic
       - 📁 application
       - 📁 domain
         - 📁 model
@@ -504,7 +468,7 @@ export interface BaseEntity {
   /**
    * The unique identifier for the entity.
    */
-  id: number;
+  id: string;
 }
 ```
 
@@ -526,7 +490,7 @@ export interface BaseResource {
   /**
    * The unique identifier for the resource.
    */
-  id: number;
+  id: string;
 }
 ```
 
@@ -635,7 +599,7 @@ export abstract class BaseApiEndpoint<
    * Retrieves a single entity by ID.
    * @param id - The ID of the entity.
    */
-  getById(id: number): Observable<TEntity> {
+  getById(id: string): Observable<TEntity> {
     return this.http.get<TResource>(`${this.endpointUrl}/${id}`).pipe(
       map(resource => this.assembler.toEntityFromResource(resource)),
       catchError(this.handleError('Failed to fetch entity'))
@@ -659,7 +623,7 @@ export abstract class BaseApiEndpoint<
    * @param entity - The entity to update.
    * @param id - The ID of the entity.
    */
-  update(entity: TEntity, id: number): Observable<TEntity> {
+  update(entity: TEntity, id: string): Observable<TEntity> {
     const resource = this.assembler.toResourceFromEntity(entity);
     return this.http.put<TResource>(`${this.endpointUrl}/${id}`, resource).pipe(
       map(updated => this.assembler.toEntityFromResource(updated)),
@@ -671,7 +635,7 @@ export abstract class BaseApiEndpoint<
    * Deletes an entity by ID.
    * @param id - The ID of the entity to delete.
    */
-  delete(id: number): Observable<void> {
+  delete(id: string): Observable<void> {
     return this.http.delete<void>(`${this.endpointUrl}/${id}`).pipe(
       catchError(this.handleError('Failed to delete entity'))
     );
@@ -689,792 +653,778 @@ export abstract class BaseApiEndpoint<
 }
 ```
 
-## Analizando The Wine Square API
+## Analizando la SAGO API
 
-### Analizando el endpoint cellars
+### Analizando el endpoint geographic-observatories
 
-Diríjase al endpoint local http://localhost:3000/cellars y **evalúe** el json de respuesta:
+Diríjase al endpoint local http://localhost:3000/geographic-observatories y **evalúe** el json de respuesta:
 
 ```json
 [
-  { "id": 1, "name": "Reds Cellar", "wineType": "reds", "capacity": 500 }
+  { "id": "1", "name": "Observatorio Geográfico Andino", "regionCode": "AND" }
 ]
 ```
 
-### Creación de la interface Cellar tipo Response
+### Creación de la interface GeographicObservatory tipo Response
 
-**Ejecutar** el siguiente CLI command para crear la interface `Cellars` tipo `response`:
+**Ejecutar** el siguiente CLI command para crear la interface `GeographicObservatories` tipo `response`:
 
 ```bash
-ng generate interface preservation/infrastructure/cellars-response
+ng generate interface observatories/infrastructure/geographic-observatories-response
 ```
 
-**Reemplazar** el contenido de `cellars-response.ts`:
+**Reemplazar** el contenido de `geographic-observatories-response.ts`:
 
 ```ts
 import { BaseResource, BaseResponse } from '../../shared/infrastructure/base-response';
 
 /**
- * Represents the response structure for cellar-related API calls.
- * Extends the BaseResponse to include a list of cellar resources.
+ * Represents the response structure for geographic observatory API calls.
  *
- * @interface CellarsResponse
+ * @interface GeographicObservatoriesResponse
  * @extends BaseResponse
  */
-export interface CellarsResponse extends BaseResponse {
-  cellars: CellarResource[];
+export interface GeographicObservatoriesResponse extends BaseResponse {
+  geographicObservatories: GeographicObservatoryResource[];
 }
 
 /**
- * Represents a resource within a cellar management system, extending the functionality of BaseResource.
- * This interface defines the structure of a cellar resource that includes properties for identification,
- * storage capacity, and the type of wine stored.
+ * Represents a resource for a geographic observatory.
  *
- * Properties:
- * - `id` (number): A unique identifier for the cellar resource.
- * - `name` (string): The name of the cellar resource.
- * - `wineType` (string): The type of wine associated with the cellar resource.
- * - `capacity` (number): The maximum storage capacity of the cellar resource.
- *
- * Extends:
- * - BaseResource: This interface inherits properties and methods from BaseResource.
+ * @interface GeographicObservatoryResource
+ * @extends BaseResource
  */
-export interface CellarResource extends BaseResource {
-  id: number;
+export interface GeographicObservatoryResource extends BaseResource {
+  id: string;
   name: string;
-  wineType: string;
-  capacity: number;
+  regionCode: string;
 }
 ```
 
-### Creación del class Cellar tipo entity (model)
+### Creación del class GeographicObservatory tipo entity (model)
 
-**Ejecutar** el siguiente CLI command para crear el modelo `cellar`:
+**Ejecutar** el siguiente CLI command para crear el modelo `geographic-observatory`:
 
 ```bash
-ng generate class preservation/domain/model/cellar --type=entity --skip-tests=true
+ng generate class observatories/domain/model/geographic-observatory --type=entity --skip-tests=true
 ```
 
-**Agregar** el siguiente `import` y la interface `BaseEntity` a la clase `Cellar`:
+**Agregar** el siguiente `import` y la interface `BaseEntity` a la clase `GeographicObservatory`:
 
 ```ts
 import { BaseEntity } from '../../../shared/infrastructure/base-entity';
 
 /**
- * Represents a cellar entity with details about its properties.
- * This class implements the BaseEntity interface.
+ * Represents a Geographic Observatory entity.
+ * Implements the BaseEntity interface.
  */
-export class Cellar implements BaseEntity
+export class GeographicObservatory implements BaseEntity
 ```
 
-**Agregar** los siguientes atributos y constructor a la clase `Cellar`:
+**Agregar** los siguientes atributos y constructor a la clase `GeographicObservatory`:
 
 ```ts
-private _id!: number;
+private _id!: string;
 private _name!: string;
-private _wineType!: string;
-private _capacity!: number;
+private _regionCode!: string;
 
 /**
- * Constructs an instance of the class with the given cellar details.
+ * Constructs an instance of GeographicObservatory.
  *
- * @param {Object} cellar - The cellar details for initialization.
- * @param {number} cellar.id - The unique identifier of the cellar.
- * @param {string} cellar.name - The name of the cellar.
- * @param {string} cellar.wineType - The type of wine stored in the cellar.
- * @param {number} cellar.capacity - The storage capacity of the cellar.
+ * @param {Object} observatory - The observatory details.
+ * @param {string} observatory.id - The unique identifier.
+ * @param {string} observatory.name - The name of the observatory.
+ * @param {string} observatory.regionCode - The region code of the observatory.
  */
-constructor(cellar: { id: number; name: string; wineType: string; capacity: number }) {
-  this._id = cellar.id;
-  this._name = cellar.name;
-  this._wineType = cellar.wineType;
-  this._capacity = cellar.capacity;
+constructor(observatory: { id: string; name: string; regionCode: string }) {
+  this._id = observatory.id;
+  this._name = observatory.name;
+  this._regionCode = observatory.regionCode;
 }
 
-get id(): number { return this._id; }
-set id(value: number) { this._id = value; }
+get id(): string { return this._id; }
+set id(value: string) { this._id = value; }
 
 get name(): string { return this._name; }
 set name(value: string) { this._name = value; }
 
-get wineType(): string { return this._wineType; }
-set wineType(value: string) { this._wineType = value; }
-
-get capacity(): number { return this._capacity; }
-set capacity(value: number) { this._capacity = value; }
+get regionCode(): string { return this._regionCode; }
+set regionCode(value: string) { this._regionCode = value; }
 ```
 
-### Creación del class Cellar tipo Assembler
+### Creación del class GeographicObservatory tipo Assembler
 
 **Ejecutar** el siguiente CLI command:
 
 ```bash
-ng generate class preservation/infrastructure/cellar-assembler --skip-tests=true
+ng generate class observatories/infrastructure/geographic-observatory-assembler --skip-tests=true
 ```
 
-**Reemplazar** el contenido de `cellar-assembler.ts`:
+**Reemplazar** el contenido de `geographic-observatory-assembler.ts`:
 
 ```ts
 import { BaseAssembler } from '../../shared/infrastructure/base-assembler';
-import { Cellar } from '../domain/model/cellar.entity';
-import { CellarResource, CellarsResponse } from './cellars-response';
+import { GeographicObservatory } from '../domain/model/geographic-observatory.entity';
+import { GeographicObservatoryResource, GeographicObservatoriesResponse } from './geographic-observatories-response';
 
 /**
- * The CellarAssembler class is responsible for converting between Cellar entities,
- * CellarResource objects, and CellarsResponse objects. It facilitates the transformation
- * of data to and from different layers of the application.
- *
- * Implements BaseAssembler with the following type parameters:
- * - Cellar: The domain entity representing a cellar.
- * - CellarResource: The resource representation of a cellar for transport or presentation layers.
- * - CellarsResponse: The specialized response object containing multiple cellar resources.
+ * Assembler for converting between GeographicObservatory entities, resources, and responses.
  */
-export class CellarAssembler implements BaseAssembler<Cellar, CellarResource, CellarsResponse> {
-  /**
-   * Converts a CellarsResponse object into an array of Cellar entities.
-   *
-   * @param {CellarsResponse} response - The response object containing cellar resources.
-   * @return {Cellar[]} An array of Cellar entities derived from the response data.
-   */
-  toEntitiesFromResponse(response: CellarsResponse): Cellar[] {
-    return response.cellars.map(r => this.toEntityFromResource(r));
+export class GeographicObservatoryAssembler
+  implements BaseAssembler<GeographicObservatory, GeographicObservatoryResource, GeographicObservatoriesResponse> {
+
+  toEntitiesFromResponse(response: GeographicObservatoriesResponse): GeographicObservatory[] {
+    return response.geographicObservatories.map(r => this.toEntityFromResource(r));
   }
 
-  /**
-   * Converts a CellarResource object into a Cellar entity.
-   *
-   * @param {CellarResource} resource - The resource object to convert.
-   * @return {Cellar} The converted Cellar entity.
-   */
-  toEntityFromResource(resource: CellarResource): Cellar {
-    return new Cellar({
+  toEntityFromResource(resource: GeographicObservatoryResource): GeographicObservatory {
+    return new GeographicObservatory({
       id: resource.id,
       name: resource.name,
-      wineType: resource.wineType,
-      capacity: resource.capacity
+      regionCode: resource.regionCode
     });
   }
 
-  /**
-   * Transforms a Cellar entity into a CellarResource object.
-   *
-   * @param {Cellar} entity - The Cellar entity to be transformed.
-   * @return {CellarResource} The resulting resource representation of the entity.
-   */
-  toResourceFromEntity(entity: Cellar): CellarResource {
+  toResourceFromEntity(entity: GeographicObservatory): GeographicObservatoryResource {
     return {
       id: entity.id,
       name: entity.name,
-      wineType: entity.wineType,
-      capacity: entity.capacity
-    } as CellarResource;
+      regionCode: entity.regionCode
+    } as GeographicObservatoryResource;
   }
 }
 ```
 
-### Analizando el endpoint preservation-items
+### Analizando el endpoint country-items
 
-Diríjase al endpoint local http://localhost:3000/preservation-items y **evalúe** el json de respuesta:
+Diríjase al endpoint local http://localhost:3000/country-items y **evalúe** el json de respuesta:
 
 ```json
 [
   {
-    "id": 1,
-    "cellarId": 1,
-    "wineType": "reds",
-    "wineId": 1,
-    "wineName": "Eszencia 1999",
-    "quantity": 42,
-    "registeredAt": "2026-05-10T14:30:00.000Z"
+    "id": "1",
+    "observatoryId": "1",
+    "regionCode": "AND",
+    "countryName": "Peru",
+    "officialName": "Republic of Peru",
+    "flagUrl": "https://flagcdn.com/images/flags/pe.svg",
+    "area": 1285216.0,
+    "population": 32971846,
+    "startOfWeek": "monday",
+    "registeredAt": "2026-05-19T14:30:00.000Z"
   }
 ]
 ```
 
-### Creación de la interface PreservationItem tipo Response
+### Creación de la interface CountryItem tipo Response
 
 **Ejecutar** el siguiente CLI command:
 
 ```bash
-ng generate interface preservation/infrastructure/preservation-items-response
+ng generate interface observatories/infrastructure/country-items-response
 ```
 
-**Reemplazar** el contenido de `preservation-items-response.ts`:
+**Reemplazar** el contenido de `country-items-response.ts`:
 
 ```ts
 import { BaseResource, BaseResponse } from '../../shared/infrastructure/base-response';
 
 /**
- * Represents the response for preservation item requests.
- * Extends the BaseResponse interface to include additional information
- * specific to preservation items.
+ * Represents the response structure for country item API calls.
  *
- * @interface PreservationItemsResponse
+ * @interface CountryItemsResponse
  * @extends BaseResponse
  */
-export interface PreservationItemsResponse extends BaseResponse {
-  preservationItems: PreservationItemResource[];
+export interface CountryItemsResponse extends BaseResponse {
+  countryItems: CountryItemResource[];
 }
 
 /**
- * Interface representing a PreservationItemResource.
+ * Represents a country item resource returned by the API.
  *
- * This resource is used to represent a preserved wine item, including its metadata
- * such as identification, type, name, quantity, and registration details.
- *
+ * @interface CountryItemResource
  * @extends BaseResource
- *
- * @property {number} id - Unique identifier for the preservation item.
- * @property {number} cellarId - Identifier for the cellar where the item is stored.
- * @property {string} wineType - Type of wine (e.g., red, white, sparkling).
- * @property {number} wineId - Identifier for the specific wine.
- * @property {string} wineName - Name of the wine.
- * @property {number} quantity - Quantity of the wine preserved.
- * @property {string} registeredAt - Date and time when the item was registered, in ISO 8601 format.
  */
-export interface PreservationItemResource extends BaseResource {
-  id: number;
-  cellarId: number;
-  wineType: string;
-  wineId: number;
-  wineName: string;
-  quantity: number;
+export interface CountryItemResource extends BaseResource {
+  id: string;
+  observatoryId: string;
+  regionCode: string;
+  countryName: string;
+  officialName: string;
+  flagUrl: string;
+  area: number;
+  population: number;
+  startOfWeek: string;
   registeredAt: string;
 }
 ```
 
-### Creación del class PreservationItem tipo entity (model)
+### Creación del class CountryItem tipo entity (model)
 
 **Ejecutar** el siguiente CLI command:
 
 ```bash
-ng generate class preservation/domain/model/preservation-item --type=entity --skip-tests=true
+ng generate class observatories/domain/model/country-item --type=entity --skip-tests=true
 ```
 
-**Agregar** el `import` y la interface `BaseEntity` a la clase `PreservationItem`:
+**Agregar** el `import` y la interface `BaseEntity` a la clase `CountryItem`:
 
 ```ts
 import { BaseEntity } from '../../../shared/infrastructure/base-entity';
 
 /**
- * Represents a preservation item stored in a wine cellar.
- *
- * This class holds information about a specific wine bottle or collection of bottles stored
- * in a wine cellar, including details like the cellar ID, wine type, name, quantity, and registration date.
+ * Represents a Country Item stored under a Geographic Observatory.
  */
-export class PreservationItem implements BaseEntity
+export class CountryItem implements BaseEntity
 ```
 
 **Agregar** los siguientes atributos y constructor:
 
 ```ts
-private _id!: number;
-private _cellarId!: number;
-private _wineType!: string;
-private _wineId!: number;
-private _wineName!: string;
-private _quantity!: number;
+private _id!: string;
+private _observatoryId!: string;
+private _regionCode!: string;
+private _countryName!: string;
+private _officialName!: string;
+private _flagUrl!: string;
+private _area!: number;
+private _population!: number;
+private _startOfWeek!: string;
 private _registeredAt!: string;
 
 /**
- * Constructs a new instance of the class using the provided preservation item details.
+ * Constructs a new CountryItem instance.
  *
- * @param {Object} preservationItem An object containing the details of the preservation item.
- * @param {number} preservationItem.id The unique identifier of the preservation item.
- * @param {number} preservationItem.cellarId The identifier of the cellar associated with the preservation item.
- * @param {string} preservationItem.wineType The type of wine (e.g., red, white, sparkling).
- * @param {number} preservationItem.wineId The unique identifier of the wine.
- * @param {string} preservationItem.wineName The name of the wine.
- * @param {number} preservationItem.quantity The quantity of the wine in preservation.
- * @param {string} preservationItem.registeredAt The date and time when the preservation item was registered.
+ * @param {Object} countryItem - The country item details.
+ * @param {string} countryItem.id - The unique identifier.
+ * @param {string} countryItem.observatoryId - The associated observatory identifier.
+ * @param {string} countryItem.regionCode - The region code of the observatory.
+ * @param {string} countryItem.countryName - The common name of the country.
+ * @param {string} countryItem.officialName - The official name of the country.
+ * @param {string} countryItem.flagUrl - The URL of the country flag (SVG).
+ * @param {number} countryItem.area - The territorial area in km².
+ * @param {number} countryItem.population - The population count.
+ * @param {string} countryItem.startOfWeek - The start of week convention.
+ * @param {string} countryItem.registeredAt - The ISO 8601 registration date.
  */
-constructor(preservationItem: {
-  id: number;
-  cellarId: number;
-  wineType: string;
-  wineId: number;
-  wineName: string;
-  quantity: number;
+constructor(countryItem: {
+  id: string;
+  observatoryId: string;
+  regionCode: string;
+  countryName: string;
+  officialName: string;
+  flagUrl: string;
+  area: number;
+  population: number;
+  startOfWeek: string;
   registeredAt: string;
 }) {
-  this._id = preservationItem.id;
-  this._cellarId = preservationItem.cellarId;
-  this._wineType = preservationItem.wineType;
-  this._wineId = preservationItem.wineId;
-  this._wineName = preservationItem.wineName;
-  this._quantity = preservationItem.quantity;
-  this._registeredAt = preservationItem.registeredAt;
+  this._id = countryItem.id;
+  this._observatoryId = countryItem.observatoryId;
+  this._regionCode = countryItem.regionCode;
+  this._countryName = countryItem.countryName;
+  this._officialName = countryItem.officialName;
+  this._flagUrl = countryItem.flagUrl;
+  this._area = countryItem.area;
+  this._population = countryItem.population;
+  this._startOfWeek = countryItem.startOfWeek;
+  this._registeredAt = countryItem.registeredAt;
 }
 
-get id(): number { return this._id; }
-set id(value: number) { this._id = value; }
+get id(): string { return this._id; }
+set id(value: string) { this._id = value; }
 
-get cellarId(): number { return this._cellarId; }
-set cellarId(value: number) { this._cellarId = value; }
+get observatoryId(): string { return this._observatoryId; }
+set observatoryId(value: string) { this._observatoryId = value; }
 
-get wineType(): string { return this._wineType; }
-set wineType(value: string) { this._wineType = value; }
+get regionCode(): string { return this._regionCode; }
+set regionCode(value: string) { this._regionCode = value; }
 
-get wineId(): number { return this._wineId; }
-set wineId(value: number) { this._wineId = value; }
+get countryName(): string { return this._countryName; }
+set countryName(value: string) { this._countryName = value; }
 
-get wineName(): string { return this._wineName; }
-set wineName(value: string) { this._wineName = value; }
+get officialName(): string { return this._officialName; }
+set officialName(value: string) { this._officialName = value; }
 
-get quantity(): number { return this._quantity; }
-set quantity(value: number) { this._quantity = value; }
+get flagUrl(): string { return this._flagUrl; }
+set flagUrl(value: string) { this._flagUrl = value; }
+
+get area(): number { return this._area; }
+set area(value: number) { this._area = value; }
+
+get population(): number { return this._population; }
+set population(value: number) { this._population = value; }
+
+get startOfWeek(): string { return this._startOfWeek; }
+set startOfWeek(value: string) { this._startOfWeek = value; }
 
 get registeredAt(): string { return this._registeredAt; }
 set registeredAt(value: string) { this._registeredAt = value; }
 ```
 
-### Creación del class PreservationItem tipo Assembler
+### Creación del class CountryItem tipo Assembler
 
 **Ejecutar** el siguiente CLI command:
 
 ```bash
-ng generate class preservation/infrastructure/preservation-item-assembler --skip-tests=true
+ng generate class observatories/infrastructure/country-item-assembler --skip-tests=true
 ```
 
-**Reemplazar** el contenido de `preservation-item-assembler.ts`:
+**Reemplazar** el contenido de `country-item-assembler.ts`:
 
 ```ts
 import { BaseAssembler } from '../../shared/infrastructure/base-assembler';
-import { PreservationItem } from '../domain/model/preservation-item.entity';
-import { PreservationItemResource, PreservationItemsResponse } from './preservation-items-response';
+import { CountryItem } from '../domain/model/country-item.entity';
+import { CountryItemResource, CountryItemsResponse } from './country-items-response';
 
 /**
- * The PreservationItemAssembler class is responsible for converting between domain entities, resources,
- * and response objects related to preservation items. This class implements the BaseAssembler interface
- * with specific type mappings for PreservationItem, PreservationItemResource, and PreservationItemsResponse.
- *
- * It provides methods to map from API responses to entities, resources to entities,
- * and entities to resources, facilitating the transformation between various application layers.
+ * Assembler for converting between CountryItem entities, resources, and responses.
  */
-export class PreservationItemAssembler
-  implements BaseAssembler<PreservationItem, PreservationItemResource, PreservationItemsResponse> {
+export class CountryItemAssembler
+  implements BaseAssembler<CountryItem, CountryItemResource, CountryItemsResponse> {
 
-  /**
-   * Converts a PreservationItemsResponse into an array of PreservationItem entities.
-   *
-   * @param {PreservationItemsResponse} response - The response object containing preservation items.
-   * @return {PreservationItem[]} An array of PreservationItem entities extracted from the response.
-   */
-  toEntitiesFromResponse(response: PreservationItemsResponse): PreservationItem[] {
-    return response.preservationItems.map(r => this.toEntityFromResource(r));
+  toEntitiesFromResponse(response: CountryItemsResponse): CountryItem[] {
+    return response.countryItems.map(r => this.toEntityFromResource(r));
   }
 
-  /**
-   * Converts a PreservationItemResource object into a PreservationItem entity.
-   *
-   * @param {PreservationItemResource} resource - The resource object to be converted.
-   * @return {PreservationItem} The corresponding PreservationItem entity.
-   */
-  toEntityFromResource(resource: PreservationItemResource): PreservationItem {
-    return new PreservationItem({
+  toEntityFromResource(resource: CountryItemResource): CountryItem {
+    return new CountryItem({
       id: resource.id,
-      cellarId: resource.cellarId,
-      wineType: resource.wineType,
-      wineId: resource.wineId,
-      wineName: resource.wineName,
-      quantity: resource.quantity,
+      observatoryId: resource.observatoryId,
+      regionCode: resource.regionCode,
+      countryName: resource.countryName,
+      officialName: resource.officialName,
+      flagUrl: resource.flagUrl,
+      area: resource.area,
+      population: resource.population,
+      startOfWeek: resource.startOfWeek,
       registeredAt: resource.registeredAt
     });
   }
 
-  /**
-   * Converts a PreservationItem entity to a PreservationItemResource.
-   *
-   * @param {PreservationItem} entity - The PreservationItem entity to be converted.
-   * @return {PreservationItemResource} The resulting PreservationItemResource object.
-   */
-  toResourceFromEntity(entity: PreservationItem): PreservationItemResource {
+  toResourceFromEntity(entity: CountryItem): CountryItemResource {
     return {
       id: entity.id,
-      cellarId: entity.cellarId,
-      wineType: entity.wineType,
-      wineId: entity.wineId,
-      wineName: entity.wineName,
-      quantity: entity.quantity,
+      observatoryId: entity.observatoryId,
+      regionCode: entity.regionCode,
+      countryName: entity.countryName,
+      officialName: entity.officialName,
+      flagUrl: entity.flagUrl,
+      area: entity.area,
+      population: entity.population,
+      startOfWeek: entity.startOfWeek,
       registeredAt: entity.registeredAt
-    } as PreservationItemResource;
+    } as CountryItemResource;
   }
 }
 ```
 
-## Creación del PreservationApi Service
+## Creación del ObservatoriesApi Service
 
-### Creación del class Cellars tipo ApiEndpoint
+### Creación del class GeographicObservatories tipo ApiEndpoint
 
 **Ejecutar** el siguiente CLI command:
 
 ```bash
-ng generate class preservation/infrastructure/cellars-api-endpoint --skip-tests=true
+ng generate class observatories/infrastructure/geographic-observatories-api-endpoint --skip-tests=true
 ```
 
-**Reemplazar** el contenido de `cellars-api-endpoint.ts`:
+**Reemplazar** el contenido de `geographic-observatories-api-endpoint.ts`:
 
 ```ts
 import { BaseApiEndpoint } from '../../shared/infrastructure/base-api-endpoint';
-import { Cellar } from '../domain/model/cellar.entity';
-import { CellarResource, CellarsResponse } from './cellars-response';
-import { CellarAssembler } from './cellar-assembler';
+import { GeographicObservatory } from '../domain/model/geographic-observatory.entity';
+import { GeographicObservatoryResource, GeographicObservatoriesResponse } from './geographic-observatories-response';
+import { GeographicObservatoryAssembler } from './geographic-observatory-assembler';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 
 /**
- * Represents the API endpoint for managing cellar-related operations.
- * This class handles the communication with the Wine Square Provider's Cellars API.
- * It extends the functionality of the BaseApiEndpoint to provide type-safe operations
- * for cellar data.
- *
- * @extends BaseApiEndpoint<Cellar, CellarResource, CellarsResponse, CellarAssembler>
+ * API endpoint for Geographic Observatory operations.
+ * Communicates with the SAGO Provider's geographic observatories endpoint.
  */
-export class CellarsApiEndpoint extends BaseApiEndpoint<
-  Cellar, CellarResource, CellarsResponse, CellarAssembler
+export class GeographicObservatoriesApiEndpoint extends BaseApiEndpoint<
+  GeographicObservatory, GeographicObservatoryResource, GeographicObservatoriesResponse, GeographicObservatoryAssembler
 > {
   constructor(http: HttpClient) {
     super(
       http,
-      `${environment.wineSquareProviderApiBaseUrl}${environment.wineSquareProviderCellarsEndpointPath}`,
-      new CellarAssembler()
+      `${environment.sagoProviderApiBaseUrl}${environment.sagoProviderGeographicObservatoriesEndpointPath}`,
+      new GeographicObservatoryAssembler()
     );
   }
 }
 ```
 
-### Creación del class PreservationItem tipo ApiEndpoint
+### Creación del class CountryItem tipo ApiEndpoint
 
 **Ejecutar** el siguiente CLI command:
 
 ```bash
-ng generate class preservation/infrastructure/preservation-item-api-endpoint --skip-tests=true
+ng generate class observatories/infrastructure/country-item-api-endpoint --skip-tests=true
 ```
 
-**Reemplazar** el contenido de `preservation-item-api-endpoint.ts`:
+**Reemplazar** el contenido de `country-item-api-endpoint.ts`:
 
 ```ts
 import { BaseApiEndpoint } from '../../shared/infrastructure/base-api-endpoint';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
-import { PreservationItem } from '../domain/model/preservation-item.entity';
-import { PreservationItemResource, PreservationItemsResponse } from './preservation-items-response';
-import { PreservationItemAssembler } from './preservation-item-assembler';
+import { CountryItem } from '../domain/model/country-item.entity';
+import { CountryItemResource, CountryItemsResponse } from './country-items-response';
+import { CountryItemAssembler } from './country-item-assembler';
 
 /**
- * PreservationItemApiEndpoint is a service class that interacts with the API endpoints
- * for handling PreservationItem resources.
- *
- * This class extends BaseApiEndpoint, providing standardized methods for CRUD operations
- * on PreservationItem resources. It leverages the PreservationItemAssembler to handle
- * the transformation of data between the application and the API.
- *
- * The API base URL and endpoint path are dynamically constructed using the application's
- * environment configuration.
- *
- * @extends BaseApiEndpoint
+ * API endpoint for Country Item operations.
+ * Communicates with the SAGO Provider's country items endpoint.
  */
-export class PreservationItemApiEndpoint extends BaseApiEndpoint<
-  PreservationItem, PreservationItemResource, PreservationItemsResponse, PreservationItemAssembler
+export class CountryItemApiEndpoint extends BaseApiEndpoint<
+  CountryItem, CountryItemResource, CountryItemsResponse, CountryItemAssembler
 > {
   constructor(http: HttpClient) {
     super(
       http,
-      `${environment.wineSquareProviderApiBaseUrl}${environment.wineSquareProviderPreservationItemsEndpointPath}`,
-      new PreservationItemAssembler()
+      `${environment.sagoProviderApiBaseUrl}${environment.sagoProviderCountryItemsEndpointPath}`,
+      new CountryItemAssembler()
     );
   }
 }
 ```
 
-### Creación del class Preservation tipo Api
+### Creación del class Observatories tipo Api
 
 **Ejecutar** el siguiente CLI command:
 
 ```bash
-ng generate service preservation/infrastructure/preservation-api --skip-tests=true
+ng generate service observatories/infrastructure/observatories-api --skip-tests=true
 ```
 
-**Reemplazar** el contenido de `preservation-api.ts`:
+**Reemplazar** el contenido de `observatories-api.ts`:
 
 ```ts
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { BaseApi } from '../../shared/infrastructure/base-api';
-import { PreservationItem } from '../domain/model/preservation-item.entity';
-import { Cellar } from '../domain/model/cellar.entity';
-import { CellarsApiEndpoint } from './cellars-api-endpoint';
-import { PreservationItemApiEndpoint } from './preservation-item-api-endpoint';
+import { CountryItem } from '../domain/model/country-item.entity';
+import { GeographicObservatory } from '../domain/model/geographic-observatory.entity';
+import { GeographicObservatoriesApiEndpoint } from './geographic-observatories-api-endpoint';
+import { CountryItemApiEndpoint } from './country-item-api-endpoint';
 
 /**
- * The PreservationApi class provides methods for interacting with API endpoints
- * related to cellars and preservation items. It acts as a service that wraps
- * the HTTP requests and returns observables for further processing.
- *
- * This service is decorated with @Injectable and is provided at the root level,
- * making it available throughout the application without needing to register it
- * in any specific module.
- *
- * It extends the BaseApi class to encapsulate common API functionalities.
+ * ObservatoriesApi provides methods for interacting with geographic observatory
+ * and country item API endpoints.
  */
 @Injectable({ providedIn: 'root' })
-export class PreservationApi extends BaseApi {
-  private preservationItemApiEndpoint: PreservationItemApiEndpoint;
-  private cellarsApiEndpoint: CellarsApiEndpoint;
+export class ObservatoriesApi extends BaseApi {
+  private countryItemApiEndpoint: CountryItemApiEndpoint;
+  private geographicObservatoriesApiEndpoint: GeographicObservatoriesApiEndpoint;
 
   constructor(private http: HttpClient) {
     super();
-    this.preservationItemApiEndpoint = new PreservationItemApiEndpoint(http);
-    this.cellarsApiEndpoint = new CellarsApiEndpoint(http);
+    this.countryItemApiEndpoint = new CountryItemApiEndpoint(http);
+    this.geographicObservatoriesApiEndpoint = new GeographicObservatoriesApiEndpoint(http);
   }
 
   /**
-   * Retrieves a list of cellars from the API endpoint.
-   *
-   * @return {Observable<Cellar[]>} An observable emitting an array of cellar objects.
+   * Retrieves all geographic observatories.
+   * @return {Observable<GeographicObservatory[]>} Observable emitting an array of observatories.
    */
-  getCellars(): Observable<Cellar[]> {
-    return this.cellarsApiEndpoint.getAll();
+  getGeographicObservatories(): Observable<GeographicObservatory[]> {
+    return this.geographicObservatoriesApiEndpoint.getAll();
   }
 
   /**
-   * Retrieves a list of preservation items from the API endpoint.
-   *
-   * @return {Observable<PreservationItem[]>} An observable that emits an array of preservation items.
+   * Retrieves all country items.
+   * @return {Observable<CountryItem[]>} Observable emitting an array of country items.
    */
-  getPreservationItems(): Observable<PreservationItem[]> {
-    return this.preservationItemApiEndpoint.getAll();
+  getCountryItems(): Observable<CountryItem[]> {
+    return this.countryItemApiEndpoint.getAll();
   }
 
   /**
-   * Creates a new preservation item by sending the provided data to the API endpoint.
-   *
-   * @param {PreservationItem} item - The preservation item to be created.
-   * @return {Observable<PreservationItem>} An observable that emits the created preservation item.
+   * Creates a new country item.
+   * @param {CountryItem} item - The country item to persist.
+   * @return {Observable<CountryItem>} Observable emitting the created country item.
    */
-  createPreservationItem(item: PreservationItem): Observable<PreservationItem> {
-    return this.preservationItemApiEndpoint.create(item);
+  createCountryItem(item: CountryItem): Observable<CountryItem> {
+    return this.countryItemApiEndpoint.create(item);
   }
 }
 ```
 
-## Analizando SampleAPI (Winery)
+## Analizando REST Countries API (Geographic)
 
-Diríjase al endpoint https://api.sampleapis.com/wines/reds y **evalúe** el json de respuesta:
+Diríjase al endpoint https://restcountries.com/v3.1/subregion/South%20America?fields=name,flags,region,subregion,area,population,independent,startOfWeek,flag y **evalúe** el json de respuesta:
 
 ```json
 [
   {
-    "winery": "Oremus",
-    "wine": "Eszencia 1999",
-    "rating": { "average": "5.0", "reviews": "34 ratings" },
-    "location": "Hungary\n·\nTokaj",
-    "image": "https://images.vivino.com/thumbs/_VYRnv4XTfCVEXlvhYw4AA_pb_x300.png",
-    "id": 1
+    "flags": {
+      "png": "https://flagcdn.com/w320/pe.png",
+      "svg": "https://flagcdn.com/images/flags/pe.svg",
+      "alt": "The flag of Peru features three vertical bands of red, white and red..."
+    },
+    "name": {
+      "common": "Peru",
+      "official": "Republic of Peru",
+      "nativeName": { }
+    },
+    "independent": true,
+    "region": "Americas",
+    "subregion": "South America",
+    "area": 1285216.0,
+    "population": 32971846,
+    "startOfWeek": "monday",
+    "flag": "🇵🇪"
   }
 ]
 ```
 
-### Creación de la interface Wines tipo Response
+### Creación de la interface Country tipo Response
 
 **Ejecutar** el siguiente CLI command:
 
 ```bash
-ng generate interface winery/infrastructure/wines-response
+ng generate interface geographic/infrastructure/countries-response
 ```
 
-**Reemplazar** el contenido de `wines-response.ts`:
+**Reemplazar** el contenido de `countries-response.ts`:
 
 ```ts
 import { BaseResource, BaseResponse } from '../../shared/infrastructure/base-response';
 
 /**
- * Represents a wine resource containing information about a specific wine,
- * its associated winery, location, ratings, and other related details.
- * Extends the BaseResource.
+ * Represents a country resource returned by the REST Countries API v3.1.
  *
- * @interface WineResource
+ * @interface CountryResource
  * @extends BaseResource
  */
-export interface WineResource extends BaseResource {
-  winery: string;
-  wine: string;
-  rating: {
-    average: string;
-    reviews: string;
+export interface CountryResource extends BaseResource {
+  flags: {
+    png: string;
+    svg: string;
+    alt: string;
   };
-  location: string;
-  image: string;
-  id: number;
+  name: {
+    common: string;
+    official: string;
+  };
+  independent: boolean;
+  region: string;
+  subregion: string;
+  area: number;
+  population: number;
+  startOfWeek: string;
+  flag: string;
 }
 
-export type WinesResponse = WineResource[];
+export type CountriesResponse = CountryResource[];
 ```
 
 > [!NOTE]
-> SampleAPI devuelve un array plano (no envoltorio con propiedad `wines`). Por eso `WinesResponse` es un alias del array.
+> REST Countries API devuelve un array plano (no envoltorio con propiedad `countries`). Por eso `CountriesResponse` es un alias del array. El `id` requerido por `BaseResource` se mapea desde `name.common` en el assembler.
 
-### Creación del class Wine tipo entity (model)
+### Creación del class Country tipo entity (model)
 
 **Ejecutar** el siguiente CLI command:
 
 ```bash
-ng generate class winery/domain/model/wine --type=entity --skip-tests=true
+ng generate class geographic/domain/model/country --type=entity --skip-tests=true
 ```
 
-**Agregar** el `import` y la interface `BaseEntity` a la clase `Wine`:
+**Agregar** el `import` y la interface `BaseEntity` a la clase `Country`:
 
 ```ts
 import { BaseEntity } from '../../../shared/infrastructure/base-entity';
 
 /**
- * Represents a Wine entity with properties such as winery, name, rating, location, image, and ID.
- *
+ * Represents a Country entity retrieved from REST Countries API.
  * Implements the BaseEntity interface.
  */
-export class Wine implements BaseEntity
+export class Country implements BaseEntity
 ```
 
 **Agregar** los siguientes atributos y constructor:
 
 ```ts
-private _winery!: string;
-private _wine!: string;
-private _rating!: { average: number; reviews: string };
-private _location!: string;
-private _image!: string;
-private _id!: number;
+private _id!: string;
+private _commonName!: string;
+private _officialName!: string;
+private _flagSvg!: string;
+private _flagPng!: string;
+private _flagAlt!: string;
+private _flagEmoji!: string;
+private _independent!: boolean;
+private _region!: string;
+private _subregion!: string;
+private _area!: number;
+private _population!: number;
+private _startOfWeek!: string;
 
 /**
- * Constructs a new instance of the class with the provided wine data.
+ * Constructs a new Country instance.
  *
- * @param {Object} wine - An object containing the details of a wine.
- * @param {string} wine.winery - The name of the winery.
- * @param {string} wine.wine - The name of the wine.
- * @param {Object} wine.rating - An object containing rating details of the wine.
- * @param {number} wine.rating.average - The average rating of the wine.
- * @param {string} wine.rating.reviews - The reviews count as a descriptive string.
- * @param {string} wine.location - The location of the winery.
- * @param {string} wine.image - The URL of the wine's image.
- * @param {number} wine.id - The unique identifier of the wine.
+ * @param {Object} country - The country details.
+ * @param {string} country.id - Unique identifier (common name used as key).
+ * @param {string} country.commonName - The common name of the country.
+ * @param {string} country.officialName - The official name of the country.
+ * @param {string} country.flagSvg - The SVG URL of the country flag.
+ * @param {string} country.flagPng - The PNG URL of the country flag.
+ * @param {string} country.flagAlt - The alt text for the country flag.
+ * @param {string} country.flagEmoji - The emoji representation of the flag.
+ * @param {boolean} country.independent - Whether the country is independent.
+ * @param {string} country.region - The region of the country.
+ * @param {string} country.subregion - The subregion of the country.
+ * @param {number} country.area - The area in km².
+ * @param {number} country.population - The population count.
+ * @param {string} country.startOfWeek - The start of week convention.
  */
-constructor(wine: {
-  winery: string;
-  wine: string;
-  rating: { average: number; reviews: string };
-  location: string;
-  image: string;
-  id: number;
+constructor(country: {
+  id: string;
+  commonName: string;
+  officialName: string;
+  flagSvg: string;
+  flagPng: string;
+  flagAlt: string;
+  flagEmoji: string;
+  independent: boolean;
+  region: string;
+  subregion: string;
+  area: number;
+  population: number;
+  startOfWeek: string;
 }) {
-  this._winery = wine.winery;
-  this._wine = wine.wine;
-  this._rating = wine.rating;
-  this._location = wine.location;
-  this._image = wine.image;
-  this._id = wine.id;
+  this._id = country.id;
+  this._commonName = country.commonName;
+  this._officialName = country.officialName;
+  this._flagSvg = country.flagSvg;
+  this._flagPng = country.flagPng;
+  this._flagAlt = country.flagAlt;
+  this._flagEmoji = country.flagEmoji;
+  this._independent = country.independent;
+  this._region = country.region;
+  this._subregion = country.subregion;
+  this._area = country.area;
+  this._population = country.population;
+  this._startOfWeek = country.startOfWeek;
 }
 
-get winery(): string { return this._winery; }
-set winery(value: string) { this._winery = value; }
+get id(): string { return this._id; }
+set id(value: string) { this._id = value; }
 
-get wine(): string { return this._wine; }
-set wine(value: string) { this._wine = value; }
+get commonName(): string { return this._commonName; }
+set commonName(value: string) { this._commonName = value; }
 
-get rating(): { average: number; reviews: string } { return this._rating; }
-set rating(value: { average: number; reviews: string }) { this._rating = value; }
+get officialName(): string { return this._officialName; }
+set officialName(value: string) { this._officialName = value; }
 
-get location(): string { return this._location; }
-set location(value: string) { this._location = value; }
+get flagSvg(): string { return this._flagSvg; }
+set flagSvg(value: string) { this._flagSvg = value; }
 
-get image(): string { return this._image; }
-set image(value: string) { this._image = value; }
+get flagPng(): string { return this._flagPng; }
+set flagPng(value: string) { this._flagPng = value; }
 
-get id(): number { return this._id; }
-set id(value: number) { this._id = value; }
+get flagAlt(): string { return this._flagAlt; }
+set flagAlt(value: string) { this._flagAlt = value; }
+
+get flagEmoji(): string { return this._flagEmoji; }
+set flagEmoji(value: string) { this._flagEmoji = value; }
+
+get independent(): boolean { return this._independent; }
+set independent(value: boolean) { this._independent = value; }
+
+get region(): string { return this._region; }
+set region(value: string) { this._region = value; }
+
+get subregion(): string { return this._subregion; }
+set subregion(value: string) { this._subregion = value; }
+
+get area(): number { return this._area; }
+set area(value: number) { this._area = value; }
+
+get population(): number { return this._population; }
+set population(value: number) { this._population = value; }
+
+get startOfWeek(): string { return this._startOfWeek; }
+set startOfWeek(value: string) { this._startOfWeek = value; }
 ```
 
-### Creación del class Wine tipo Assembler
+### Creación del class Country tipo Assembler
 
 **Ejecutar** el siguiente CLI command:
 
 ```bash
-ng generate class winery/infrastructure/wine-assembler --skip-tests=true
+ng generate class geographic/infrastructure/country-assembler --skip-tests=true
 ```
 
-**Reemplazar** el contenido de `wine-assembler.ts`:
+**Reemplazar** el contenido de `country-assembler.ts`:
 
 ```ts
 import { BaseAssembler } from '../../shared/infrastructure/base-assembler';
-import { Wine } from '../domain/model/wine.entity';
-import { WineResource, WinesResponse } from './wines-response';
+import { Country } from '../domain/model/country.entity';
+import { CountryResource, CountriesResponse } from './countries-response';
 
 /**
- * The WineAssembler class is responsible for converting between `Wine` entities,
- * `WineResource` DTOs, and `WinesResponse` types.
- *
- * @implements {BaseAssembler<Wine, WineResource, WinesResponse>}
+ * Assembler for converting between Country entities, CountryResource DTOs, and CountriesResponse.
  */
-export class WineAssembler implements BaseAssembler<Wine, WineResource, WinesResponse> {
-  /**
-   * Converts a WinesResponse object into an array of Wine entities.
-   * @param response - The WinesResponse object containing wine data.
-   * @returns An array of Wine entities created from the response.
-   */
-  toEntitiesFromResponse(response: WinesResponse): Wine[] {
+export class CountryAssembler implements BaseAssembler<Country, CountryResource, CountriesResponse> {
+
+  toEntitiesFromResponse(response: CountriesResponse): Country[] {
     return response.map(r => this.toEntityFromResource(r));
   }
 
-  /**
-   * Converts a WineResource object into a Wine entity.
-   *
-   * @param {WineResource} resource - The resource object containing wine data to be transformed.
-   * @return {Wine} A new Wine entity created from the provided resource data.
-   */
-  toEntityFromResource(resource: WineResource): Wine {
-    return new Wine({
-      id: resource.id,
-      winery: resource.winery,
-      wine: resource.wine,
-      rating: {
-        average: parseFloat(resource.rating.average),
-        reviews: resource.rating.reviews
-      },
-      location: resource.location,
-      image: resource.image
+  toEntityFromResource(resource: CountryResource): Country {
+    return new Country({
+      id: resource.name.common,
+      commonName: resource.name.common,
+      officialName: resource.name.official,
+      flagSvg: resource.flags.svg,
+      flagPng: resource.flags.png,
+      flagAlt: resource.flags.alt,
+      flagEmoji: resource.flag,
+      independent: resource.independent,
+      region: resource.region,
+      subregion: resource.subregion,
+      area: resource.area,
+      population: resource.population,
+      startOfWeek: resource.startOfWeek
     });
   }
 
-  /**
-   * Converts a Wine entity into a WineResource object.
-   *
-   * @param {Wine} entity - The Wine entity to be converted.
-   * @return {WineResource} The transformed WineResource object.
-   */
-  toResourceFromEntity(entity: Wine): WineResource {
+  toResourceFromEntity(entity: Country): CountryResource {
     return {
       id: entity.id,
-      winery: entity.winery,
-      wine: entity.wine,
-      rating: {
-        average: entity.rating.average.toString(),
-        reviews: entity.rating.reviews
+      flags: {
+        png: entity.flagPng,
+        svg: entity.flagSvg,
+        alt: entity.flagAlt
       },
-      location: entity.location,
-      image: entity.image
-    } as WineResource;
+      name: {
+        common: entity.commonName,
+        official: entity.officialName
+      },
+      independent: entity.independent,
+      region: entity.region,
+      subregion: entity.subregion,
+      area: entity.area,
+      population: entity.population,
+      startOfWeek: entity.startOfWeek,
+      flag: entity.flagEmoji
+    } as CountryResource;
   }
 }
 ```
 
-### Creación del class Wines tipo ApiEndpoint
+### Creación del class Countries tipo ApiEndpoint
 
 **Ejecutar** el siguiente CLI command:
 
 ```bash
-ng generate class winery/infrastructure/wines-api-endpoint --skip-tests=true
+ng generate class geographic/infrastructure/countries-api-endpoint --skip-tests=true
 ```
 
-**Reemplazar** el contenido de `wines-api-endpoint.ts`:
+**Reemplazar** el contenido de `countries-api-endpoint.ts`:
 
 ```ts
 import { HttpClient } from '@angular/common/http';
@@ -1482,110 +1432,107 @@ import { Observable } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { BaseApiEndpoint } from '../../shared/infrastructure/base-api-endpoint';
 import { environment } from '../../../environments/environment';
-import { Wine } from '../domain/model/wine.entity';
-import { WineResource, WinesResponse } from './wines-response';
-import { WineAssembler } from './wine-assembler';
+import { Country } from '../domain/model/country.entity';
+import { CountryResource, CountriesResponse } from './countries-response';
+import { CountryAssembler } from './country-assembler';
 
-export class WinesApiEndpoint extends BaseApiEndpoint<
-  Wine, WineResource, WinesResponse, WineAssembler
+/**
+ * API endpoint for retrieving South American countries from REST Countries API v3.1.
+ */
+export class CountriesApiEndpoint extends BaseApiEndpoint<
+  Country, CountryResource, CountriesResponse, CountryAssembler
 > {
-  private readonly pathsByType: Record<string, string> = {
-    reds: environment.sampleApiProviderRedsEndpointPath,
-    whites: environment.sampleApiProviderWhitesEndpointPath,
-    sparkling: environment.sampleApiProviderSparklingEndpointPath,
-    rose: environment.sampleApiProviderRoseEndpointPath,
-    dessert: environment.sampleApiProviderDessertEndpointPath,
-    port: environment.sampleApiProviderPortEndpointPath
-  };
-
   constructor(http: HttpClient) {
-    super(http, environment.sampleApiProviderApiBaseUrl, new WineAssembler());
+    super(
+      http,
+      `${environment.restCountriesApiBaseUrl}${environment.restCountriesSubregionEndpointPath}?${environment.restCountriesFields}`,
+      new CountryAssembler()
+    );
   }
 
   /**
-   * Retrieves a list of wines based on the specified wine type.
-   *
-   * @param wineType The type of wine to filter by (e.g., red, white, rosé).
-   * @return An observable containing an array of Wine entities.
+   * Retrieves all South American countries from the REST Countries API.
+   * @return An Observable containing an array of Country entities.
    */
-  getByWineType(wineType: string): Observable<Wine[]> {
-    const path = this.pathsByType[wineType];
-    return this.http.get<WineResource[]>(`${this.endpointUrl}${path}`).pipe(
+  getSouthAmericanCountries(): Observable<Country[]> {
+    return this.http.get<CountryResource[]>(this.endpointUrl).pipe(
       map(resources => resources.map(r => this.assembler.toEntityFromResource(r))),
-      catchError(this.handleError('Failed to fetch wines'))
+      catchError(this.handleError('Failed to fetch South American countries'))
     );
   }
 }
 ```
 
-### Creación del class Winery tipo Api
+### Creación del class Geographic tipo Api
 
 **Ejecutar** el siguiente CLI command:
 
 ```bash
-ng generate service winery/infrastructure/winery-api --skip-tests=true
+ng generate service geographic/infrastructure/geographic-api --skip-tests=true
 ```
 
-**Reemplazar** el contenido de `winery-api.ts`:
+**Reemplazar** el contenido de `geographic-api.ts`:
 
 ```ts
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { BaseApi } from '../../shared/infrastructure/base-api';
-import { Wine } from '../domain/model/wine.entity';
-import { WinesApiEndpoint } from './wines-api-endpoint';
+import { Country } from '../domain/model/country.entity';
+import { CountriesApiEndpoint } from './countries-api-endpoint';
 
+/**
+ * GeographicApi provides access to REST Countries API data for South American countries.
+ */
 @Injectable({ providedIn: 'root' })
-export class WineryApi extends BaseApi {
-  private winesApiEndpoint: WinesApiEndpoint;
+export class GeographicApi extends BaseApi {
+  private countriesApiEndpoint: CountriesApiEndpoint;
 
   constructor(private http: HttpClient) {
     super();
-    this.winesApiEndpoint = new WinesApiEndpoint(http);
+    this.countriesApiEndpoint = new CountriesApiEndpoint(http);
   }
 
   /**
-   * Retrieves wines by type from SampleAPI.
-   * @param wineType - The wine type (e.g., 'reds', 'whites').
-   * @returns An Observable of an array of Wine objects.
+   * Retrieves all South American countries.
+   * @returns An Observable of an array of Country objects.
    */
-  getByWineType(wineType: string): Observable<Wine[]> {
-    return this.winesApiEndpoint.getByWineType(wineType);
+  getSouthAmericanCountries(): Observable<Country[]> {
+    return this.countriesApiEndpoint.getSouthAmericanCountries();
   }
 }
 ```
 
 ## Application layer
 
-### Creación del Service PreservationStore
+### Creación del Service ObservatoriesStore
 
 **Ejecutar** el siguiente CLI command:
 
 ```bash
-ng generate service preservation/application/preservation-store --skip-tests=true
+ng generate service observatories/application/observatories-store --skip-tests=true
 ```
 
-**Reemplazar** el contenido de `preservation-store.ts`:
+**Reemplazar** el contenido de `observatories-store.ts`:
 
 ```ts
 import { Injectable, computed, signal } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { retry } from 'rxjs';
-import { PreservationItem } from '../domain/model/preservation-item.entity';
-import { Cellar } from '../domain/model/cellar.entity';
-import { PreservationApi } from '../infrastructure/preservation-api';
+import { CountryItem } from '../domain/model/country-item.entity';
+import { GeographicObservatory } from '../domain/model/geographic-observatory.entity';
+import { ObservatoriesApi } from '../infrastructure/observatories-api';
 
 /**
- * PreservationStore manages reactive state for cellars and preservation items.
+ * ObservatoriesStore manages reactive state for geographic observatories and country items.
  */
 @Injectable({ providedIn: 'root' })
-export class PreservationStore {
-  private readonly preservationItemsSignal = signal<PreservationItem[]>([]);
-  private readonly cellarsSignal = signal<Cellar[]>([]);
+export class ObservatoriesStore {
+  private readonly countryItemsSignal = signal<CountryItem[]>([]);
+  private readonly observatoriesSignal = signal<GeographicObservatory[]>([]);
 
-  readonly preservationItems = this.preservationItemsSignal.asReadonly();
-  readonly cellars = this.cellarsSignal.asReadonly();
+  readonly countryItems = this.countryItemsSignal.asReadonly();
+  readonly observatories = this.observatoriesSignal.asReadonly();
 
   private readonly loadingSignal = signal(false);
   readonly loading = this.loadingSignal.asReadonly();
@@ -1593,84 +1540,91 @@ export class PreservationStore {
   private readonly errorSignal = signal<string | null>(null);
   readonly error = this.errorSignal.asReadonly();
 
-  readonly preservationItemsCount = computed(() => this.preservationItems().length);
-  readonly cellarsCount = computed(() => this.cellars().length);
+  readonly countryItemsCount = computed(() => this.countryItems().length);
+  readonly observatoriesCount = computed(() => this.observatories().length);
 
-  constructor(private preservationApi: PreservationApi) {
-    this.loadPreservationItems();
-    this.loadCellars();
+  constructor(private observatoriesApi: ObservatoriesApi) {
+    this.loadCountryItems();
+    this.loadObservatories();
   }
 
   /**
-   * Returns the cellar associated with a given wine type.
+   * Returns the observatory associated with a given region code.
    *
-   * @param wineType The wine type to look up.
-   * @returns The matching Cellar or undefined.
+   * @param regionCode The region code to look up.
+   * @returns The matching GeographicObservatory or undefined.
    */
-  getCellarByWineType(wineType: string): Cellar | undefined {
-    return this.cellars().find(c => c.wineType === wineType);
+  getObservatoryByRegionCode(regionCode: string): GeographicObservatory | undefined {
+    return this.observatories().find(o => o.regionCode === regionCode);
   }
 
   /**
-   * Calculates the available capacity for a given cellar.
+   * Returns all country items associated with a given observatory id.
    *
-   * @param cellarId The cellar identifier.
-   * @returns The number of remaining bottle slots in the cellar.
+   * @param observatoryId The observatory identifier to filter items by.
+   * @returns An array of CountryItem entities for that observatory.
    */
-  availableCapacityFor(cellarId: number): number {
-    const cellar = this.cellars().find(c => c.id === cellarId);
-    if (!cellar) return 0;
-    const total = this.preservationItems()
-      .filter(p => p.cellarId === cellarId)
-      .reduce((s, p) => s + p.quantity, 0);
-    return cellar.capacity - total;
+  itemsByObservatory(observatoryId: string): CountryItem[] {
+    return this.countryItems().filter(c => c.observatoryId === observatoryId);
   }
 
   /**
-   * Adds a new preservation item to the API and updates the local state.
+   * Calculates the total accumulated population for a given observatory.
    *
-   * @param item The preservation item entity to persist.
+   * @param observatoryId The observatory identifier.
+   * @returns The sum of population values across all registered country items.
    */
-  addPreservationItem(item: PreservationItem): void {
+  accumulatedPopulationFor(observatoryId: string): number {
+    return this.countryItems()
+      .filter(c => c.observatoryId === observatoryId)
+      .reduce((s, c) => s + c.population, 0);
+  }
+
+  /**
+   * Adds a new country item to the API and updates the local state.
+   *
+   * @param item The CountryItem entity to persist.
+   */
+  addCountryItem(item: CountryItem): void {
     this.loadingSignal.set(true);
     this.errorSignal.set(null);
-    this.preservationApi.createPreservationItem(item).pipe(retry(2)).subscribe({
+    this.observatoriesApi.createCountryItem(item).pipe(retry(2)).subscribe({
       next: created => {
-        this.preservationItemsSignal.update(items => [...items, created]);
+        this.countryItemsSignal.update(items => [...items, created]);
         this.loadingSignal.set(false);
       },
       error: err => {
-        this.errorSignal.set(this.formatError(err, 'Failed to create preservation item'));
+        this.errorSignal.set(this.formatError(err, 'Failed to create country item'));
         this.loadingSignal.set(false);
       }
     });
   }
 
-  private loadPreservationItems(): void {
+  private loadCountryItems(): void {
     this.loadingSignal.set(true);
     this.errorSignal.set(null);
-    this.preservationApi.getPreservationItems().pipe(takeUntilDestroyed(), retry(3)).subscribe({
+    this.observatoriesApi.getCountryItems().pipe(takeUntilDestroyed(), retry(3)).subscribe({
       next: items => {
-        this.preservationItemsSignal.set(items);
+        this.countryItemsSignal.set(items);
         this.loadingSignal.set(false);
       },
       error: err => {
-        this.errorSignal.set(this.formatError(err, 'Failed to load preservation items'));
+        this.errorSignal.set(this.formatError(err, 'Failed to load country items'));
         this.loadingSignal.set(false);
       }
     });
   }
 
-  private loadCellars(): void {
+  private loadObservatories(): void {
     this.loadingSignal.set(true);
     this.errorSignal.set(null);
-    this.preservationApi.getCellars().pipe(takeUntilDestroyed(), retry(3)).subscribe({
-      next: cellars => {
-        this.cellarsSignal.set(cellars);
+    this.observatoriesApi.getGeographicObservatories().pipe(takeUntilDestroyed(), retry(3)).subscribe({
+      next: observatories => {
+        this.observatoriesSignal.set(observatories);
         this.loadingSignal.set(false);
       },
       error: err => {
-        this.errorSignal.set(this.formatError(err, 'Failed to load cellars'));
+        this.errorSignal.set(this.formatError(err, 'Failed to load observatories'));
         this.loadingSignal.set(false);
       }
     });
@@ -1687,29 +1641,29 @@ export class PreservationStore {
 }
 ```
 
-### Creación del Service WineryStore
+### Creación del Service GeographicStore
 
 **Ejecutar** el siguiente CLI command:
 
 ```bash
-ng generate service winery/application/winery-store --skip-tests=true
+ng generate service geographic/application/geographic-store --skip-tests=true
 ```
 
-**Reemplazar** el contenido de `winery-store.ts`:
+**Reemplazar** el contenido de `geographic-store.ts`:
 
 ```ts
 import { Injectable, computed, signal } from '@angular/core';
 import { retry } from 'rxjs';
-import { Wine } from '../domain/model/wine.entity';
-import { WineryApi } from '../infrastructure/winery-api';
+import { Country } from '../domain/model/country.entity';
+import { GeographicApi } from '../infrastructure/geographic-api';
 
 /**
- * WineryStore manages reactive state for wines loaded by wine type.
+ * GeographicStore manages reactive state for South American countries.
  */
 @Injectable({ providedIn: 'root' })
-export class WineryStore {
-  private readonly winesSignal = signal<Wine[]>([]);
-  readonly wines = this.winesSignal.asReadonly();
+export class GeographicStore {
+  private readonly countriesSignal = signal<Country[]>([]);
+  readonly countries = this.countriesSignal.asReadonly();
 
   private readonly loadingSignal = signal(false);
   readonly loading = this.loadingSignal.asReadonly();
@@ -1717,33 +1671,30 @@ export class WineryStore {
   private readonly errorSignal = signal<string | null>(null);
   readonly error = this.errorSignal.asReadonly();
 
-  readonly winesCount = computed(() => this.wines().length);
+  readonly countriesCount = computed(() => this.countries().length);
 
-  constructor(private wineryApi: WineryApi) {}
+  constructor(private geographicApi: GeographicApi) {}
 
   /**
-   * Loads wines from the API for the given wine type and stores them in state.
-   *
-   * @param wineType The wine type (e.g. reds, whites, sparkling).
+   * Loads all South American countries from REST Countries API and stores them in state.
    */
-  loadWinesByType(wineType: string): void {
+  loadCountries(): void {
     this.loadingSignal.set(true);
     this.errorSignal.set(null);
-    this.winesSignal.set([]);
-    this.wineryApi.getByWineType(wineType).pipe(retry(2)).subscribe({
-      next: wines => {
-        this.winesSignal.set(wines);
+    this.geographicApi.getSouthAmericanCountries().pipe(retry(2)).subscribe({
+      next: countries => {
+        this.countriesSignal.set(countries);
         this.loadingSignal.set(false);
       },
       error: err => {
-        this.errorSignal.set(this.formatError(err, 'Failed to load wines'));
+        this.errorSignal.set(this.formatError(err, 'Failed to load countries'));
         this.loadingSignal.set(false);
       }
     });
   }
 
-  clearWines(): void {
-    this.winesSignal.set([]);
+  clearCountries(): void {
+    this.countriesSignal.set([]);
   }
 
   private formatError(error: any, fallback: string): string {
@@ -1782,27 +1733,27 @@ ng generate component shared/presentation/views/page-not-found --skip-tests=true
 ```
 
 ```bash
-ng generate component preservation/presentation/components/cellar-summary --skip-tests=true
+ng generate component observatories/presentation/components/observatory-summary --skip-tests=true
 ```
 
 ```bash
-ng generate component preservation/presentation/views/new-preservation-item --skip-tests=true
+ng generate component observatories/presentation/views/new-country-item --skip-tests=true
 ```
 
 ## Configuración del Routes
 
-### Crear y configurar preservation.routes
+### Crear y configurar geographic.routes
 
-**Crear** el archivo `preservation.routes.ts` en la carpeta `preservation/presentation/views`:
+**Crear** el archivo `geographic.routes.ts` en la carpeta `observatories/presentation/views`:
 
 ```ts
 import { Routes } from '@angular/router';
 
-const newPreservationItem = () =>
-  import('./new-preservation-item/new-preservation-item').then(m => m.NewPreservationItem);
+const newCountryItem = () =>
+  import('./new-country-item/new-country-item').then(m => m.NewCountryItem);
 
-export const preservationRoutes: Routes = [
-  { path: 'items/new', loadComponent: newPreservationItem }
+export const geographicRoutes: Routes = [
+  { path: 'countries/new', loadComponent: newCountryItem }
 ];
 ```
 
@@ -1817,14 +1768,14 @@ import { Home } from './shared/presentation/views/home/home';
 const pageNotFound = () =>
   import('./shared/presentation/views/page-not-found/page-not-found').then(m => m.PageNotFound);
 
-const baseTitle = 'The Wine Square';
+const baseTitle = 'SAGO Platform';
 
 export const routes: Routes = [
   { path: 'home', component: Home, title: `${baseTitle} | Home` },
   {
-    path: 'preservation',
+    path: 'geographic',
     loadChildren: () =>
-      import('./preservation/presentation/views/preservation.routes').then(m => m.preservationRoutes)
+      import('./observatories/presentation/views/geographic.routes').then(m => m.geographicRoutes)
   },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', loadComponent: pageNotFound, title: `${baseTitle} | Page Not Found` }
@@ -1838,7 +1789,7 @@ export const routes: Routes = [
 **Reemplazar** el contenido de `language-switcher.ts`:
 
 ```ts
-import { Component, DestroyRef, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatButtonToggle, MatButtonToggleGroup } from '@angular/material/button-toggle';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -1904,7 +1855,7 @@ export class FooterContent {}
 
 ```html
 <div class="footer-content">
-  <p>Copyright &copy; 2025 The Wine Square. {{ 'footer.rights' | translate }}</p>
+  <p>Copyright &copy; 2026 South American Geographic Observatory. {{ 'footer.rights' | translate }}</p>
   <p>{{ 'footer.powered-by' | translate }}
     <a href="https://material.angular.dev/" target="_blank">Angular Material</a>
     {{ 'footer.and' | translate }}
@@ -1918,7 +1869,7 @@ export class FooterContent {}
 ```css
 .footer-content {
   width: 100%;
-  background-color: darkslategrey;
+  background-color: #1a3a2a;
   color: white;
   text-align: center;
   padding: 16px;
@@ -1958,7 +1909,7 @@ import { FooterContent } from '../footer-content/footer-content';
 export class Layout {
   options = [
     { link: '/home', label: 'option.home' },
-    { link: '/preservation/items/new', label: 'option.new-preservation-item' }
+    { link: '/geographic/countries/new', label: 'option.new-country-item' }
   ];
 }
 ```
@@ -1966,11 +1917,11 @@ export class Layout {
 **Reemplazar** el contenido de `layout.html`:
 
 ```html
-<mat-toolbar>
+<mat-toolbar role="banner">
   <mat-toolbar-row class="toolbar-grid">
     <div class="brand">
-      <img src="https://img.logo.dev/thewinesquare.com?token=pk_B79Ajy8lSxuZc3W2xNN80A" alt="Thewinesquare" width="32" height="32"/>
-      <h1>The Wine Square Cellar Management Platform</h1>
+      <img src="https://img.logo.dev/sago-observatory.org?token=pk_B79Ajy8lSxuZc3W2xNN80A" alt="SAGO" width="32" height="32"/>
+      <h1>South American Geographic Observatory Platform</h1>
     </div>
     <nav class="nav-center" aria-label="Main navigation">
       @for (option of options; track option.label) {
@@ -1990,7 +1941,7 @@ export class Layout {
 
 ```css
 mat-toolbar {
-  background-color: darkslategrey;
+  background-color: #1a3a2a;
   color: white;
 }
 
@@ -2070,35 +2021,35 @@ export class App {}
 import { Component, inject, Signal } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { CellarSummary } from '../../../../preservation/presentation/components/cellar-summary/cellar-summary';
-import { PreservationStore } from '../../../../preservation/application/preservation-store';
-import { Cellar } from '../../../../preservation/domain/model/cellar.entity';
-import { PreservationItem } from '../../../../preservation/domain/model/preservation-item.entity';
+import { ObservatorySummary } from '../../../../observatories/presentation/components/observatory-summary/observatory-summary';
+import { ObservatoriesStore } from '../../../../observatories/application/observatories-store';
+import { GeographicObservatory } from '../../../../observatories/domain/model/geographic-observatory.entity';
+import { CountryItem } from '../../../../observatories/domain/model/country-item.entity';
 
 /**
- * Home view displaying the welcome content and the "My Wine Cellars" section
- * with a grid of CellarSummary components.
+ * Home view displaying the welcome content and the "My Geographic Observatories" section
+ * with a grid of ObservatorySummary components.
  */
 @Component({
   selector: 'app-home',
-  imports: [TranslatePipe, MatGridListModule, CellarSummary],
+  imports: [TranslatePipe, MatGridListModule, ObservatorySummary],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })
 export class Home {
-  private readonly store = inject(PreservationStore);
+  private readonly store = inject(ObservatoriesStore);
 
-  readonly cellars: Signal<Cellar[]> = this.store.cellars;
-  readonly preservationItems: Signal<PreservationItem[]> = this.store.preservationItems;
+  readonly observatories: Signal<GeographicObservatory[]> = this.store.observatories;
+  readonly countryItems: Signal<CountryItem[]> = this.store.countryItems;
 
   /**
-   * Returns the preservation items associated with a given cellar id.
+   * Returns the country items associated with a given observatory id.
    *
-   * @param cellarId The cellar identifier to filter items by.
-   * @returns A computed array of PreservationItem entities for that cellar.
+   * @param observatoryId The observatory identifier to filter items by.
+   * @returns An array of CountryItem entities for that observatory.
    */
-  itemsByCellar(cellarId: number): PreservationItem[] {
-    return this.preservationItems().filter(p => p.cellarId === cellarId);
+  itemsByObservatory(observatoryId: string): CountryItem[] {
+    return this.countryItems().filter(c => c.observatoryId === observatoryId);
   }
 }
 ```
@@ -2110,15 +2061,15 @@ export class Home {
   <h1>{{ 'home.title' | translate }}</h1>
   <p class="lead">{{ 'home.content' | translate }}</p>
 
-  <section class="cellars-section" aria-labelledby="my-wine-cellars-title">
-    <h2 id="my-wine-cellars-title">{{ 'home.my-wine-cellars' | translate }}</h2>
+  <section class="observatories-section" aria-labelledby="my-geographic-observatories-title">
+    <h2 id="my-geographic-observatories-title">{{ 'home.my-geographic-observatories' | translate }}</h2>
 
-    <mat-grid-list cols="2" rowHeight="280px" gutterSize="16px">
-      @for (cellar of cellars(); track cellar.id) {
+    <mat-grid-list cols="2" rowHeight="300px" gutterSize="16px">
+      @for (observatory of observatories(); track observatory.id) {
         <mat-grid-tile>
-          <app-cellar-summary
-            [cellar]="cellar"
-            [items]="itemsByCellar(cellar.id)" />
+          <app-observatory-summary
+            [observatory]="observatory"
+            [items]="itemsByObservatory(observatory.id)" />
         </mat-grid-tile>
       }
     </mat-grid-list>
@@ -2144,7 +2095,7 @@ export class Home {
   font-size: 2rem;
   font-weight: 400;
   margin: 0;
-  color: darkslategrey;
+  color: #1a3a2a;
 }
 
 .lead {
@@ -2153,12 +2104,12 @@ export class Home {
   margin: 0;
 }
 
-.cellars-section h2 {
+.observatories-section h2 {
   font-size: 1.4rem;
   font-weight: 500;
-  color: darkslategrey;
+  color: #1a3a2a;
   margin: 0 0 16px 0;
-  border-bottom: 2px solid darkslategrey;
+  border-bottom: 2px solid #1a3a2a;
   padding-bottom: 6px;
 }
 
@@ -2210,59 +2161,60 @@ export class PageNotFound {
 
 .page-not-found h1 {
   font-size: 3rem;
-  color: darkslategrey;
+  color: #1a3a2a;
   margin: 0 0 16px 0;
 }
 ```
 
-### Modificación del CellarSummary Component
+### Modificación del ObservatorySummary Component
 
-**Reemplazar** el contenido de `cellar-summary.ts`:
+**Reemplazar** el contenido de `observatory-summary.ts`:
 
 ```ts
 import { Component, computed, input } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { TranslatePipe } from '@ngx-translate/core';
-import { Cellar } from '../../../domain/model/cellar.entity';
-import { PreservationItem } from '../../../domain/model/preservation-item.entity';
+import { GeographicObservatory } from '../../../domain/model/geographic-observatory.entity';
+import { CountryItem } from '../../../domain/model/country-item.entity';
 
 /**
- * CellarSummary component displays a card with cellar name, wines stored,
- * total bottles and available capacity.
+ * ObservatorySummary component displays a card with observatory name, region code,
+ * registered countries, total registered countries and accumulated population.
  */
 @Component({
-  selector: 'app-cellar-summary',
+  selector: 'app-observatory-summary',
   imports: [MatCardModule, TranslatePipe],
-  templateUrl: './cellar-summary.html',
-  styleUrl: './cellar-summary.css'
+  templateUrl: './observatory-summary.html',
+  styleUrl: './observatory-summary.css'
 })
-export class CellarSummary {
-  cellar = input.required<Cellar>();
-  items = input.required<PreservationItem[]>();
+export class ObservatorySummary {
+  observatory = input.required<GeographicObservatory>();
+  items = input.required<CountryItem[]>();
 
-  totalBottles = computed(() => this.items().reduce((s, p) => s + p.quantity, 0));
-  availableCapacity = computed(() => this.cellar().capacity - this.totalBottles());
+  totalRegisteredCountries = computed(() => this.items().length);
+  accumulatedPopulation = computed(() => this.items().reduce((s, c) => s + c.population, 0));
   isEmpty = computed(() => this.items().length === 0);
 }
 ```
 
-**Reemplazar** el contenido de `cellar-summary.html`:
+**Reemplazar** el contenido de `observatory-summary.html`:
 
 ```html
-<mat-card appearance="outlined" class="cellar-summary-card" [attr.aria-label]="cellar().name">
+<mat-card appearance="outlined" class="observatory-summary-card" [attr.aria-label]="observatory().name">
   <mat-card-header>
-    <mat-card-title>{{ cellar().name }}</mat-card-title>
+    <mat-card-title>{{ observatory().name }}</mat-card-title>
+    <mat-card-subtitle>{{ observatory().regionCode }}</mat-card-subtitle>
   </mat-card-header>
 
   <mat-card-content>
     @if (isEmpty()) {
-      <p class="empty">{{ 'cellar-summary.empty' | translate }}</p>
+      <p class="empty">{{ 'observatory-summary.empty' | translate }}</p>
     } @else {
-      <ul class="wines">
+      <ul class="countries">
         @for (item of items(); track item.id) {
           <li>
-            <span class="wine-name">{{ item.wineName }}</span>
-            <span class="wine-quantity">{{ item.quantity }}</span>
+            <span class="country-name">{{ item.countryName }}</span>
+            <span class="country-population">{{ item.population | number }}</span>
           </li>
         }
       </ul>
@@ -2271,21 +2223,21 @@ export class CellarSummary {
 
   <mat-card-footer class="card-footer">
     <div class="indicator">
-      <span class="label">{{ 'cellar-summary.total-bottles' | translate }}</span>
-      <span class="value">{{ totalBottles() }}</span>
+      <span class="label">{{ 'observatory-summary.total-registered-countries' | translate }}</span>
+      <span class="value">{{ totalRegisteredCountries() }}</span>
     </div>
     <div class="indicator">
-      <span class="label">{{ 'cellar-summary.available-capacity' | translate }}</span>
-      <span class="value">{{ availableCapacity() }}</span>
+      <span class="label">{{ 'observatory-summary.accumulated-population' | translate }}</span>
+      <span class="value">{{ accumulatedPopulation() | number }}</span>
     </div>
   </mat-card-footer>
 </mat-card>
 ```
 
-**Reemplazar** el contenido de `cellar-summary.css`:
+**Reemplazar** el contenido de `observatory-summary.css`:
 
 ```css
-.cellar-summary-card {
+.observatory-summary-card {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -2300,7 +2252,12 @@ mat-card-header {
 mat-card-title {
   font-size: 1.15rem;
   font-weight: 500;
-  color: darkslategrey;
+  color: #1a3a2a;
+}
+
+mat-card-subtitle {
+  font-size: 0.85rem;
+  color: #555;
 }
 
 mat-card-content {
@@ -2315,25 +2272,25 @@ mat-card-content {
   margin: 16px 0;
 }
 
-.wines {
+.countries {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.wines li {
+.countries li {
   display: flex;
   justify-content: space-between;
   padding: 6px 0;
   border-bottom: 1px dashed rgba(0, 0, 0, 0.06);
 }
 
-.wines li:last-child { border-bottom: none; }
+.countries li:last-child { border-bottom: none; }
 
-.wine-name { color: #333; }
+.country-name { color: #333; }
 
-.wine-quantity {
-  color: darkslategrey;
+.country-population {
+  color: #1a3a2a;
   font-weight: 500;
 }
 
@@ -2370,14 +2327,14 @@ mat-card-content {
 .indicator .value {
   font-size: 1.4rem;
   font-weight: 500;
-  color: darkslategrey;
+  color: #1a3a2a;
   line-height: 1;
 }
 ```
 
-### Modificación del NewPreservationItem Component
+### Modificación del NewCountryItem Component
 
-**Reemplazar** el contenido de `new-preservation-item.ts`:
+**Reemplazar** el contenido de `new-country-item.ts`:
 
 ```ts
 import { Component, computed, inject, signal } from '@angular/core';
@@ -2387,88 +2344,105 @@ import { Router } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { MatSelectModule } from '@angular/material/select';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { TranslatePipe } from '@ngx-translate/core';
-import { PreservationStore } from '../../../application/preservation-store';
-import { WineryStore } from '../../../../winery/application/winery-store';
-import { PreservationItem } from '../../../domain/model/preservation-item.entity';
+import { ObservatoriesStore } from '../../../application/observatories-store';
+import { GeographicStore } from '../../../../geographic/application/geographic-store';
+import { CountryItem } from '../../../domain/model/country-item.entity';
+import { Country } from '../../../../geographic/domain/model/country.entity';
 
 /**
- * NewPreservationItem view provides a form to register a new preservation item
- * by selecting a wine type, wine, and quantity.
+ * NewCountryItem view provides a form to register a new country item by
+ * searching/filtering South American countries in real time and selecting one.
+ * Validates that the selected country is independent and has area > 100,000 km².
  */
 @Component({
-  selector: 'app-new-preservation-item',
+  selector: 'app-new-country-item',
   imports: [
     CommonModule,
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
-    MatSelectModule,
+    MatAutocompleteModule,
     MatButtonModule,
     MatProgressSpinnerModule,
     TranslatePipe
   ],
-  templateUrl: './new-preservation-item.html',
-  styleUrl: './new-preservation-item.css'
+  templateUrl: './new-country-item.html',
+  styleUrl: './new-country-item.css'
 })
-export class NewPreservationItem {
+export class NewCountryItem {
   private readonly fb = inject(FormBuilder);
   private readonly router = inject(Router);
-  protected readonly preservationStore = inject(PreservationStore);
-  protected readonly wineryStore = inject(WineryStore);
+  protected readonly observatoriesStore = inject(ObservatoriesStore);
+  protected readonly geographicStore = inject(GeographicStore);
 
-  protected readonly wineTypes = ['reds', 'whites', 'sparkling', 'rose', 'dessert', 'port'];
+  protected readonly selectedCountry = signal<Country | null>(null);
 
-  protected readonly selectedWineType = signal<string | null>(null);
-  protected readonly availableCapacity = computed(() => {
-    const type = this.selectedWineType();
-    if (!type) return 0;
-    const cellar = this.preservationStore.getCellarByWineType(type);
-    if (!cellar) return 0;
-    return this.preservationStore.availableCapacityFor(cellar.id);
+  protected readonly filteredCountries = computed(() => {
+    const query = this.form.get('countrySearch')?.value?.toLowerCase() ?? '';
+    return this.geographicStore.countries().filter(c =>
+      c.commonName.toLowerCase().includes(query)
+    );
+  });
+
+  protected readonly validationError = computed(() => {
+    const country = this.selectedCountry();
+    if (!country) return null;
+    if (!country.independent) return 'not-independent';
+    if (country.area <= 100000) return 'area-too-small';
+    return null;
   });
 
   protected readonly form = this.fb.group({
-    wineType: new FormControl<string | null>(null, { validators: [Validators.required] }),
-    wineId: new FormControl<number | null>(null, { validators: [Validators.required] }),
-    quantity: new FormControl<number | null>(null, {
-      validators: [Validators.required, Validators.min(1)]
-    })
+    countrySearch: new FormControl<string>('', { validators: [Validators.required] }),
+    officialName: new FormControl<string>({ value: '', disabled: true }),
+    flagUrl: new FormControl<string>({ value: '', disabled: true }),
+    area: new FormControl<number | null>({ value: null, disabled: true }),
+    population: new FormControl<number | null>({ value: null, disabled: true }),
+    startOfWeek: new FormControl<string>({ value: '', disabled: true })
   });
 
-  onWineTypeChange(wineType: string): void {
-    this.selectedWineType.set(wineType);
-    this.form.patchValue({ wineId: null });
-    this.wineryStore.loadWinesByType(wineType);
+  constructor() {
+    this.geographicStore.loadCountries();
+  }
+
+  onCountrySelected(country: Country): void {
+    this.selectedCountry.set(country);
+    this.form.patchValue({
+      officialName: country.officialName,
+      flagUrl: country.flagSvg,
+      area: country.area,
+      population: country.population,
+      startOfWeek: country.startOfWeek
+    });
   }
 
   submit(): void {
-    if (this.form.invalid) return;
+    const country = this.selectedCountry();
+    if (!country || this.validationError()) return;
 
-    const wineType = this.form.value.wineType!;
-    const wineId = this.form.value.wineId!;
-    const quantity = this.form.value.quantity!;
-    const cellar = this.preservationStore.getCellarByWineType(wineType);
+    const observatory = this.observatoriesStore.getObservatoryByRegionCode(country.subregion.replace('South America', 'AND') || 'AND');
+    const firstObservatory = this.observatoriesStore.observatories()[0];
+    const targetObservatory = observatory ?? firstObservatory;
 
-    if (!cellar) return;
-    if (quantity > this.availableCapacity()) return;
+    if (!targetObservatory) return;
 
-    const wine = this.wineryStore.wines().find(w => w.id === wineId);
-    if (!wine) return;
-
-    const item = new PreservationItem({
-      id: 0,
-      cellarId: cellar.id,
-      wineType,
-      wineId: wine.id,
-      wineName: wine.wine,
-      quantity,
+    const item = new CountryItem({
+      id: '',
+      observatoryId: targetObservatory.id,
+      regionCode: targetObservatory.regionCode,
+      countryName: country.commonName,
+      officialName: country.officialName,
+      flagUrl: country.flagSvg,
+      area: country.area,
+      population: country.population,
+      startOfWeek: country.startOfWeek,
       registeredAt: new Date().toISOString()
     });
 
-    this.preservationStore.addPreservationItem(item);
+    this.observatoriesStore.addCountryItem(item);
     this.router.navigate(['/home']).then();
   }
 
@@ -2478,85 +2452,86 @@ export class NewPreservationItem {
 }
 ```
 
-**Reemplazar** el contenido de `new-preservation-item.html`:
+**Reemplazar** el contenido de `new-country-item.html`:
 
 ```html
-<section class="new-preservation-item">
+<section class="new-country-item">
   <header>
-    <h1>{{ 'new-preservation-item.title' | translate }}</h1>
-    <p class="subtitle">{{ 'new-preservation-item.subtitle' | translate }}</p>
+    <h1>{{ 'new-country-item.title' | translate }}</h1>
+    <p class="subtitle">{{ 'new-country-item.subtitle' | translate }}</p>
   </header>
 
-  <form [formGroup]="form" (ngSubmit)="submit()" aria-label="New preservation item form">
-    <mat-form-field appearance="outline">
-      <mat-label>{{ 'new-preservation-item.wine-type' | translate }}</mat-label>
-      <mat-select formControlName="wineType"
-                  (selectionChange)="onWineTypeChange($event.value)"
-                  required>
-        @for (type of wineTypes; track type) {
-          <mat-option [value]="type">{{ 'wine-type.' + type | translate }}</mat-option>
-        }
-      </mat-select>
-      @if (form.get('wineType')!.touched && form.get('wineType')!.hasError('required')) {
-        <mat-error>{{ 'new-preservation-item.wine-type-required' | translate }}</mat-error>
-      }
-    </mat-form-field>
+  <form [formGroup]="form" (ngSubmit)="submit()" aria-label="New country item form">
 
     <mat-form-field appearance="outline">
-      <mat-label>{{ 'new-preservation-item.wine' | translate }}</mat-label>
-      <mat-select formControlName="wineId" required>
-        @if (wineryStore.loading()) {
-          <mat-option disabled>
-            <mat-spinner diameter="20"></mat-spinner>
-          </mat-option>
-        }
-        @for (wine of wineryStore.wines(); track wine.id) {
-          <mat-option [value]="wine.id">{{ wine.wine }}</mat-option>
-        }
-      </mat-select>
-      @if (form.get('wineId')!.touched && form.get('wineId')!.hasError('required')) {
-        <mat-error>{{ 'new-preservation-item.wine-required' | translate }}</mat-error>
+      <mat-label>{{ 'new-country-item.country' | translate }}</mat-label>
+      @if (geographicStore.loading()) {
+        <mat-spinner matPrefix diameter="20" style="margin: 0 8px;"></mat-spinner>
       }
-    </mat-form-field>
-
-    <mat-form-field appearance="outline">
-      <mat-label>{{ 'new-preservation-item.quantity' | translate }}</mat-label>
       <input matInput
-             type="number"
-             formControlName="quantity"
-             min="1"
-             [max]="availableCapacity()"
-             required />
-      @if (form.get('quantity')!.touched && form.get('quantity')!.hasError('required')) {
-        <mat-error>{{ 'new-preservation-item.quantity-required' | translate }}</mat-error>
+             formControlName="countrySearch"
+             [matAutocomplete]="auto"
+             [placeholder]="'new-country-item.search-country' | translate"
+             aria-label="Search country" />
+      <mat-autocomplete #auto="matAutocomplete"
+                        (optionSelected)="onCountrySelected($event.option.value)">
+        @for (country of filteredCountries(); track country.id) {
+          <mat-option [value]="country">{{ country.commonName }}</mat-option>
+        }
+      </mat-autocomplete>
+      @if (form.get('countrySearch')!.touched && form.get('countrySearch')!.hasError('required')) {
+        <mat-error>{{ 'new-country-item.country-required' | translate }}</mat-error>
       }
-      @if (form.get('quantity')!.touched && form.get('quantity')!.hasError('min')) {
-        <mat-error>{{ 'new-preservation-item.quantity-min' | translate }}</mat-error>
-      }
-      @if (form.get('quantity')!.value && form.get('quantity')!.value! > availableCapacity()) {
-        <mat-error>
-          {{ 'new-preservation-item.quantity-exceeds' | translate: { available: availableCapacity() } }}
-        </mat-error>
-      }
+    </mat-form-field>
+
+    @if (validationError()) {
+      <mat-error class="validation-banner" role="alert">
+        {{ 'new-country-item.' + validationError() | translate }}
+      </mat-error>
+    }
+
+    <mat-form-field appearance="outline">
+      <mat-label>{{ 'new-country-item.official-name' | translate }}</mat-label>
+      <input matInput formControlName="officialName" aria-readonly="true" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>{{ 'new-country-item.flag-url' | translate }}</mat-label>
+      <input matInput formControlName="flagUrl" aria-readonly="true" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>{{ 'new-country-item.area' | translate }}</mat-label>
+      <input matInput type="number" formControlName="area" aria-readonly="true" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>{{ 'new-country-item.population' | translate }}</mat-label>
+      <input matInput type="number" formControlName="population" aria-readonly="true" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>{{ 'new-country-item.start-of-week' | translate }}</mat-label>
+      <input matInput formControlName="startOfWeek" aria-readonly="true" />
     </mat-form-field>
 
     <div class="actions">
       <button mat-stroked-button type="button" (click)="cancel()">
-        {{ 'new-preservation-item.cancel' | translate }}
+        {{ 'new-country-item.cancel' | translate }}
       </button>
       <button mat-raised-button color="primary" type="submit"
-              [disabled]="form.invalid || (form.value.quantity ?? 0) > availableCapacity()">
-        {{ 'new-preservation-item.create' | translate }}
+              [disabled]="form.invalid || !!validationError()">
+        {{ 'new-country-item.create' | translate }}
       </button>
     </div>
   </form>
 </section>
 ```
 
-**Reemplazar** el contenido de `new-preservation-item.css`:
+**Reemplazar** el contenido de `new-country-item.css`:
 
 ```css
-.new-preservation-item {
+.new-country-item {
   max-width: 600px;
   margin: 0 auto;
   padding: 24px;
@@ -2568,7 +2543,7 @@ export class NewPreservationItem {
 header h1 {
   font-size: 1.8rem;
   font-weight: 400;
-  color: darkslategrey;
+  color: #1a3a2a;
   margin: 0;
 }
 
@@ -2586,6 +2561,15 @@ form {
 
 mat-form-field {
   width: 100%;
+}
+
+.validation-banner {
+  font-size: 0.9rem;
+  padding: 8px 12px;
+  background-color: #fdecea;
+  border-radius: 4px;
+  color: #b71c1c;
+  display: block;
 }
 
 .actions {
@@ -2620,11 +2604,14 @@ ng serve --port 4200
 Antes de generar el archivo `.zip`:
 
 1. **Eliminar** la carpeta `node_modules`.
-2. **Comprimir** el proyecto siguiendo la convención `eanrcucode.zip` (por ejemplo `ea20262u201821873.zip`).
+2. **Comprimir** el proyecto siguiendo la convención `eanrcucode.zip` (por ejemplo `ea11990u201621873.zip`).
 
 ## Actividad
 
-- **Probar** los flujos de Home y New Preservation Item.
-- **Verificar** validación de capacidad (`quantity ≤ availableCapacity`).
-- **Verificar** que el cellar correcto se asocie según el wine type.
+- **Probar** los flujos de Home y New Country Item.
+- **Verificar** validación de país independiente (`independent === true`).
+- **Verificar** validación de área (`area > 100,000 km²`).
+- **Verificar** que el observatorio correcto se asocie al `CountryItem` según `regionCode`.
+- **Verificar** que los campos Official Name, Flag URL, Area, Population y Start of Week sean de solo lectura.
+- **Verificar** que `registeredAt` se genere automáticamente al momento del registro.
 - **Verificar** i18n en/es y ARIA attributes en cada vista.
